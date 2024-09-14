@@ -1,0 +1,212 @@
+section {
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.welcome-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+
+  h1 {
+    font-size: 128px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: border-color 0.7s ease, color 0.7s ease, width 0.3s ease,
+      height 0.3s ease; /* Übergang für Farbe und Größe */
+
+    &:hover {
+      border: 1px solid #3dcfb6;
+      color: #3dcfb6;
+    }
+  }
+}
+
+.left-lateral {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  .seperator {
+    width: 1px;
+    height: 240px;
+    background-color: #3dcfb6;
+    position: relative;
+  }
+}
+
+.scroll-down {
+  position: relative;
+  height: 48px;
+  width: 30px;
+  border-radius: 32px;
+  border: 1px solid #3dcfb6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    animation: moveUpDown 2s ease-in-out infinite;
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.right-lateral {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  a {
+    writing-mode: vertical-lr;
+    rotate: 180deg;
+
+    &:hover {
+      color: #3dcfb6;
+    }
+  }
+
+  .seperator {
+    width: 1px;
+    height: 190px;
+    background-color: #ffffff;
+    position: relative;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    rotate: 0deg;
+    margin-bottom: 0;
+    position: relative;
+
+    img {
+      transition: filter 0.1s ease;
+
+      &:hover {
+        filter: invert(100%) sepia(23%) saturate(1%) hue-rotate(46deg)
+          brightness(10000%) contrast(102%);
+      }
+    }
+  }
+
+  a::after {
+    content: ""; /* Erzeugt das Pseudo-Element */
+    position: absolute;
+    top: 50%;
+    right: -10px; /* Abstand nach unten unterhalb des Texts */
+    transform: translateY(-50%);
+    width: 0px; /* Startet mit 0 Breite */
+    height: 0px; /* Startet mit 0 Höhe */
+    background-color: #3dcfb6; /* Farbe des Punkts */
+    border-radius: 50%; /* Macht es rund */
+    transition: width 0.3s ease, height 0.3s ease; /* Sanfter Übergang */
+  }
+
+  a:hover::after {
+    width: 8px; /* Breite des Punkts beim Hovern */
+    height: 8px; /* Höhe des Punkts beim Hovern */
+  }
+}
+
+.marquee-container {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 50px;
+  height: 50px;
+  rotate: -3deg;
+  width: 100vw;
+  background-color: rgba(
+    128,
+    128,
+    128,
+    0.5
+  ); /* Grauer Streifen mit 50% Transparenz */
+  z-index: 5;
+  backdrop-filter: blur(2px);
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-right: 20px;
+  animation: marquee 10s linear infinite;
+  z-index: 6;
+}
+
+.marquee-content span {
+    margin: 0 16px; /* Reduzierter Abstand für gleichmäßige Verteilung */
+    color: #3dcfb6;
+  }
+  
+  .marquee-content .dot {
+    color: #3dcfb6; /* Punktfarbe */
+    margin: 0 16px; /* Kleinerer Abstand zwischen dem Punkt und dem Text */
+  }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-35%);
+  }
+}
+

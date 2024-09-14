@@ -1,0 +1,42 @@
+<section>
+  <div class="welcome-area">
+    <div class="left-lateral">
+      <div class="scroll-down">
+        <img src="./assets/scroll-down-arrow.svg" alt="" />
+      </div>
+      <div class="seperator"></div>
+    </div>
+    <div class="main-content">
+      <h2>Fullstack Developer</h2>
+      <h1>Maximilian Lackmann</h1>
+      <div class="buttons">
+        <button>Check my Work</button>
+        <button>Contact me</button>
+      </div>
+    </div>
+    <div class="right-lateral">
+      <a href="mailto:lackmann_max&#64;hotmail.com"
+        >lackmann_max&#64;hotmail.com</a
+      >
+      <div class="socials">
+        <a href="">
+          <img src="../../assets/github.svg" alt="" />
+        </a>
+        <a href="">
+          <img src="../../assets/linkedin.svg" alt="" />
+        </a>
+      </div>
+      <div class="seperator"></div>
+    </div>
+    <div class="marquee-container">
+      <div class="marquee-content">
+        @for(number of [1,2,3,4,5]; track number) {
+            @for (item of marqueeItems; track item) {
+                <span class="dot">•</span>
+                <span>{{ item.content }}</span>
+            }
+        }
+      </div>
+    </div>
+  </div>
+</section>

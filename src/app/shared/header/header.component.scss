@@ -1,0 +1,126 @@
+.header {
+  position: fixed;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 64px;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+
+  a {
+    position: relative;
+    text-decoration: none; /* Entfernt die Standard-Unterstreichung */
+  }
+
+  a::after {
+    content: ""; /* Erzeugt das Pseudo-Element */
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* Abstand nach unten unterhalb des Texts */
+    transform: translateX(-50%);
+    width: 0px; /* Startet mit 0 Breite */
+    height: 0px; /* Startet mit 0 Höhe */
+    background-color: #3dcfb6; /* Farbe des Punkts */
+    border-radius: 50%; /* Macht es rund */
+    transition: width 0.3s ease, height 0.3s ease; /* Sanfter Übergang */
+  }
+
+  a:hover::after {
+    width: 8px; /* Breite des Punkts beim Hovern */
+    height: 8px; /* Höhe des Punkts beim Hovern */
+  }
+}
+
+.translation {
+  display: flex;
+  border: 1px solid #3dcfb6;
+  border-radius: 100px;
+  background-color: transparent;
+
+  &:hover {
+    border: 1px solid white;
+    cursor: pointer;
+  }
+
+  span {
+    padding: 0px 8px 0px 8px;
+    color: #3dcfb6;
+
+    &:focus {
+      color: white;
+      background-color: #3dcfb6;
+      border: 1px solid #3dcfb6;
+      border-radius: 100px;
+    }
+  }
+}
+
+.initials {
+  right: 180px;
+  top: 20px;
+  font-size: 63px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: -12px;
+}
+
+.l {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  color: #3dcfb6;
+  margin-bottom: -45px;
+  margin-left: -20px;
+}
+.m {
+  margin-right: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3dcfb6;
+}
+
+.logo {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+.name {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: white;
+}
+
+.logo:hover .initials {
+  color: transparent;
+}
+
+.logo:hover .m,
+.logo:hover .l {
+  transition: 500ms;
+  color: transparent;
+  -webkit-text-stroke: 1px #5cd1b9;
+}
+
+.logo:hover .name {
+  transition: 300ms;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
