@@ -35,24 +35,64 @@ section {
   }
 }
 
-.buttons {
+.btn-container {
   display: flex;
   gap: 20px;
 
-  button {
-    font-size: 18px;
-    padding: 10px 20px;
+  .btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid #ffffff;
     border-radius: 20px;
+    color: #ffffff;
+    font-size: 16px;
     cursor: pointer;
-    transition: border-color 0.7s ease, color 0.7s ease, width 0.3s ease,
-      height 0.3s ease; /* Übergang für Farbe und Größe */
-
-    &:hover {
-      border: 1px solid #3dcfb6;
+    margin-top: 30px;
+    text-align: center; 
+  
+    .text {
+      display: inline-block;
+      white-space: nowrap;
+      position: relative;
+      transform: translateX(0); 
+      transition: none;
+    }
+  
+    &:hover .text {
+      animation: button-hover 3s linear infinite;
+      transition: all 0.5s ease-in-out;
       color: #3dcfb6;
     }
+  
+    &:hover {
+      transition: all 0.5s ease-in-out;
+      border-color: #3dcfb6;
+    }
+  }
+}
+
+@keyframes button-hover {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -127,6 +167,7 @@ section {
 .socials {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 
   a {
     rotate: 0deg;
@@ -191,14 +232,14 @@ section {
 }
 
 .marquee-content span {
-    margin: 0 16px; /* Reduzierter Abstand für gleichmäßige Verteilung */
-    color: #3dcfb6;
-  }
-  
-  .marquee-content .dot {
-    color: #3dcfb6; /* Punktfarbe */
-    margin: 0 16px; /* Kleinerer Abstand zwischen dem Punkt und dem Text */
-  }
+  margin: 0 16px; /* Reduzierter Abstand für gleichmäßige Verteilung */
+  color: #3dcfb6;
+}
+
+.marquee-content .dot {
+  color: #3dcfb6; /* Punktfarbe */
+  margin: 0 16px; /* Kleinerer Abstand zwischen dem Punkt und dem Text */
+}
 
 @keyframes marquee {
   0% {
@@ -209,4 +250,3 @@ section {
     transform: translateX(-35%);
   }
 }
-

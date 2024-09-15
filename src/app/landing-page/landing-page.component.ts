@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { WelcomeAreaComponent } from '../welcome-area/welcome-area.component';
+import { AboutmeComponent } from '../aboutme/aboutme.component';
+import { SkillsComponent } from '../skills/skills.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [WelcomeAreaComponent],
+  imports: [WelcomeAreaComponent, AboutmeComponent, SkillsComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })

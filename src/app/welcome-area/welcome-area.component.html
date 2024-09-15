@@ -7,11 +7,11 @@
       <div class="seperator"></div>
     </div>
     <div class="main-content">
-      <h2>Fullstack Developer</h2>
+      <h2>Frontend Developer</h2>
       <h1>Maximilian Lackmann</h1>
-      <div class="buttons">
-        <button>Check my Work</button>
-        <button>Contact me</button>
+      <div class="btn-container">
+        <button class="btn"><span class="text">Check my work</span></button>
+        <button class="btn"><span class="text">Contact me</span></button>
       </div>
     </div>
     <div class="right-lateral">
@@ -30,12 +30,11 @@
     </div>
     <div class="marquee-container">
       <div class="marquee-content">
-        @for(number of [1,2,3,4,5]; track number) {
-            @for (item of marqueeItems; track item) {
-                <span class="dot">•</span>
-                <span>{{ item.content }}</span>
-            }
-        }
+        @for(number of [1,2,3,4,5]; track number) { @for (item of marqueeItems;
+        track item) {
+        <span class="dot">•</span>
+        <span>{{ item.content }}</span>
+        } }
       </div>
     </div>
   </div>

@@ -1,0 +1,153 @@
+section {
+  background: radial-gradient(
+    22.43% 43.85% at 1.22% 52.45%,
+    rgba(8, 70, 59, 0.9) 1%,
+    #1c1c1c 100%
+  );
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  width: 50%;
+
+  p {
+    color: #5cd1b9;
+    font-size: 24px;
+  }
+}
+
+.skill-set-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  border: 1px solid #5cd1b9;
+  border-radius: 32px;
+  padding: 32px;
+  background-color: #1f2e2b80;
+
+  h1 {
+    color: #5cd1b9;
+  }
+
+  h2 {
+    color: white;
+
+    span {
+      color: #5cd1b9;
+    }
+  }
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  img {
+    height: 32px;
+    width: 32px;
+    margin-right: 16px;
+  }
+  p {
+    font-size: 16px;
+    color: white;
+  }
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 120px;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center; 
+
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    transform: translateX(0); 
+    transition: none;
+  }
+
+  &:hover .text {
+    animation: button-hover 3s linear infinite;
+    transition: all 0.5s ease-in-out;
+    color: #3dcfb6;
+  }
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    border-color: #3dcfb6;
+  }
+}
+
+@keyframes button-hover {
+0% {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+30% {
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+70% {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+100% {
+  transform: translateX(0);
+  opacity: 1;
+}
+}
+
+.right-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  width: 50%;
+  text-align: center;
+
+  p {
+    word-break: break-all;
+  }
+
+  img {
+    height: 60px;
+    width: 60px;
+
+  }
+}
+
+.skillbox {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  word-break: normal;
+}
