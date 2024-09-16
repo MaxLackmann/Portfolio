@@ -27,9 +27,10 @@ section {
   gap: 32px;
   width: 50%;
 
-  p {
+  span {
     color: #5cd1b9;
     font-size: 24px;
+    font-weight: 700;
   }
 }
 
@@ -44,14 +45,18 @@ section {
   background-color: #1f2e2b80;
 
   h1 {
+    font-size: 64px;
     color: #5cd1b9;
   }
 
   h2 {
     color: white;
+    font-size: 24px;
 
     span {
       color: #5cd1b9;
+      font-weight: 400;
+      font-size: 24px;
     }
   }
 }
@@ -76,6 +81,7 @@ section {
   overflow: hidden;
   width: 120px;
   padding: 10px;
+  margin-top: 16px;
   background-color: transparent;
   border: 1px solid #ffffff;
   border-radius: 20px;
@@ -83,6 +89,12 @@ section {
   font-size: 16px;
   cursor: pointer;
   text-align: center; 
+
+  span {
+    color: #5cd1b9;
+    font-weight: 400;
+    font-size: 18px;
+  }
 
   .text {
     display: inline-block;
