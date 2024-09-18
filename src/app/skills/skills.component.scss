@@ -21,17 +21,13 @@ section {
 }
 
 .left-side {
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 32px;
-  width: 50%;
-
-  span {
-    color: #5cd1b9;
-    font-size: 24px;
-    font-weight: 700;
-  }
+  
 }
 
 .skill-set-container {
@@ -52,12 +48,6 @@ section {
   h2 {
     color: white;
     font-size: 24px;
-
-    span {
-      color: #5cd1b9;
-      font-weight: 400;
-      font-size: 24px;
-    }
   }
 }
 
@@ -88,19 +78,13 @@ section {
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
-  text-align: center; 
-
-  span {
-    color: #5cd1b9;
-    font-weight: 400;
-    font-size: 18px;
-  }
+  text-align: center;
 
   .text {
     display: inline-block;
     white-space: nowrap;
     position: relative;
-    transform: translateX(0); 
+    transform: translateX(0);
     transition: none;
   }
 
@@ -117,25 +101,25 @@ section {
 }
 
 @keyframes button-hover {
-0% {
-  transform: translateX(0);
-  opacity: 1;
-}
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
-30% {
-  transform: translateX(-120%);
-  opacity: 0;
-}
+  30% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
 
-70% {
-  transform: translateX(100%);
-  opacity: 0;
-}
+  70% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 
-100% {
-  transform: translateX(0);
-  opacity: 1;
-}
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .right-side {
@@ -152,14 +136,14 @@ section {
   img {
     height: 60px;
     width: 60px;
-
   }
 }
 
 .skillbox {
-  height: 60px;
-  width: 60px;
+  width: 70px;
   display: flex;
   flex-direction: column;
   word-break: normal;
+  align-items: center;
+
 }

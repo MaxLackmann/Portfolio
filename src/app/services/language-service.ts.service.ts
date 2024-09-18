@@ -19,4 +19,17 @@ export class LanguageServiceTsService {
   getSelectedLanguage(): string {
     return this.languageSubject.getValue();
   }
+
+  switchValue(option: string) {
+    switch (option) {
+      case 'option1':
+        this.languageSubject.next('EN');
+        break;
+      case 'option2':
+        this.languageSubject.next('DE');
+        break;
+      default:
+        this.languageSubject.next('EN');
+    }
+  }
 }

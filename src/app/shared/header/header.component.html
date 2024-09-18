@@ -1,6 +1,6 @@
 <section class="header">
-  <div class="menu">
-    <button (toggle)="switchLanguage()" class="translation">
+  <div [ngSwitch]="selectedOption" class="menu">
+    <button class="translation">
       <span class="picked">EN</span>
       <span>DE</span>
     </button>
@@ -10,8 +10,8 @@
   </div>
   <div class="logo">
     <div class="initials">
-      <span class="m">M</span>
-      <span class="l">L</span>
+      <div class="m">M</div>
+      <div class="l">L</div>
     </div>
     <div class="name">
       Maximilian <br />
@@ -19,3 +19,9 @@
     </div>
   </div>
 </section>
+
+<!-- <div [ngSwitch]="selectedOption"></div>
+  <div ngSwitchCase="'option1'">Option 1</div>
+  <divngSwitchCase="'option2'">Option 2</div>
+  <div *ngSwitchDefault>Standardoption</div>
+</div> -->

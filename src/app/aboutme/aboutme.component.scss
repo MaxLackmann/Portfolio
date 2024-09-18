@@ -18,16 +18,45 @@ section {
   position: relative;
   gap: 32px;
   padding: 60px 0;
-
-
 }
 
 .left-side {
   width: 50%;
+  min-height: 500px;
+
+  position: relative;
   img {
     height: 100%;
     width: 100%;
+    border-radius: 20px;
+    position: absolute;
+    object-fit: cover;
+    z-index: 2;
   }
+
+  &:hover .background-stripes {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.background-stripes {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    45deg,
+    #3dcfb6 0,
+    #3dcfb6 2px,
+    transparent 0,
+    transparent 30px
+  );
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
 }
 
 .right-side {
@@ -36,6 +65,10 @@ section {
   justify-content: center;
   gap: 32px;
   width: 50%;
+
+  span {
+    color: #3dcfb6;
+  }
 
   p {
     color: #5cd1b9;
@@ -77,7 +110,3 @@ section {
   justify-content: center;
   width: 50%;
 }
-
-
-
-

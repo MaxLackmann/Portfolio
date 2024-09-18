@@ -9,10 +9,19 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+selectedOption: any;
 
   constructor() { }
 
-  switchLanguage() {
-    console.log('switchLanguage');
-  }
+  // switch(value) {
+  //   case 1:
+  //     // Code für Wert 1
+  //     break;
+  //   case 2:
+  //     // Code für Wert 2
+  //     break;
+  //   default:
+  //     // Standardfall
+  // }
 }
+

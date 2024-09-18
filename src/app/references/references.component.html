@@ -1,0 +1,22 @@
+<section>
+  <div class="references">
+    <div class="head">
+      <p>What my colleagues say about me</p>
+    </div>
+    <div class="carousel">
+      <div class="carousel__item" *ngFor="let comment of comments">
+        <div class="carousel__item-body">
+          <p class="title">
+            {{ comment.description }}
+          </p>
+          <p>{{ comment.name }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="change-comment">
+      <img src="./assets/arrow-left-references.svg" alt="" />
+      <span> &bull; &bull; &bull;</span>
+      <img src="./assets/arrow-right-references.svg" alt="" />
+    </div>
+  </div>
+</section>
