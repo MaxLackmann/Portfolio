@@ -1,0 +1,143 @@
+section {
+  background: #1c1c1c;
+  overflow: hidden;
+}
+
+.footer {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  max-height: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33.33%;
+  gap: 24px;
+}
+
+.initials {
+  right: 180px;
+  top: 20px;
+  font-size: 63px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: -12px;
+}
+
+.l {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  color: #3dcfb6;
+  margin-bottom: -45px;
+  margin-left: -20px;
+}
+.m {
+  margin-right: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3dcfb6;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: white;
+}
+
+.logo:hover .initials {
+  color: transparent;
+}
+
+.logo:hover .m,
+.logo:hover .l {
+  transition: 500ms;
+  color: transparent;
+  -webkit-text-stroke: 1px #5cd1b9;
+}
+
+.logo:hover .name {
+  transition: 300ms;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mid-side {
+  display: flex;
+  align-items: center;
+
+  span {
+    color: #3dcfb6;
+    text-align: center;
+  }
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  width: 33.33%;
+
+  a {
+    rotate: 0deg;
+    margin-bottom: 0;
+    position: relative;
+    text-align: start;
+
+    &:hover {
+      color: #3dcfb6;
+    }
+  }
+
+  a::after {
+    content: ""; /* Erzeugt das Pseudo-Element */
+    position: absolute;
+    top: 50%;
+    left: -16px; /* Abstand nach unten unterhalb des Texts */
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+    background-color: #3dcfb6; /* Farbe des Punkts */
+    border-radius: 50%; /* Macht es rund */
+    transition: opacity 0.3s ease-in-out; /* Sanfter Übergang */
+  }
+
+  a:hover::after {
+    opacity: 1;
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

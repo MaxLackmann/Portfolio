@@ -5,6 +5,7 @@ import { SkillsComponent } from '../skills/skills.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ReferencesComponent } from '../references/references.component';
 import { ContactComponent } from '../contact/contact.component';
+import { BackgroundAnimationComponent } from '../background-animation/background-animation.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -15,7 +16,8 @@ import { ContactComponent } from '../contact/contact.component';
     SkillsComponent,
     PortfolioComponent,
     ReferencesComponent,
-    ContactComponent
+    ContactComponent,
+    BackgroundAnimationComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',

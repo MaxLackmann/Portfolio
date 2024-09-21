@@ -3,20 +3,27 @@
     <div class="head">
       <p>What my colleagues say about me</p>
     </div>
-    <div class="carousel">
-      <div class="carousel__item" *ngFor="let comment of comments">
-        <div class="carousel__item-body">
-          <p class="title">
-            {{ comment.description }}
-          </p>
-          <p>{{ comment.name }}</p>
+    <div class="slider-container">
+      <div class="card-container">
+        <div
+          class="carousel__item card"
+          *ngFor="let comment of visibleCards; let i = index"
+          [class.active]="i === 1"
+        >
+          <div class="carousel-container">
+            <p class="title">{{ comment.description }}</p>
+            <div class="author">
+              <div class="seperator"></div>
+              <p>{{ comment.name }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="change-comment">
-      <img src="./assets/arrow-left-references.svg" alt="" />
+    <div class="slide-buttons">
+      <button (click)="prevCard()">&#10094;</button>
       <span> &bull; &bull; &bull;</span>
-      <img src="./assets/arrow-right-references.svg" alt="" />
+      <button (click)="nextCard()">&#10095;</button>
     </div>
   </div>
 </section>

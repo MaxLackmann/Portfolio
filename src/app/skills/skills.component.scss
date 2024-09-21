@@ -1,12 +1,7 @@
 section {
-  background: radial-gradient(
-    22.43% 43.85% at 1.22% 52.45%,
-    rgba(8, 70, 59, 0.9) 1%,
-    #1c1c1c 100%
-  );
+  background-color: #1c1c1c;
   margin: 0 auto;
-  max-width: 100%;
-  width: 100vw;
+
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -14,20 +9,25 @@ section {
 
 .skills {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   max-width: 1440px;
   width: 100%;
+  gap: 24px;
+}
+
+.skills-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .left-side {
   height: 100%;
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 32px;
-  
 }
 
 .skill-set-container {
@@ -38,7 +38,8 @@ section {
   border: 1px solid #5cd1b9;
   border-radius: 32px;
   padding: 32px;
-  background-color: #1f2e2b80;
+  background-color: rgb(31, 46, 43);
+  position: relative;
 
   h1 {
     font-size: 64px;
@@ -48,6 +49,11 @@ section {
   h2 {
     color: white;
     font-size: 24px;
+  }
+
+  span {
+    color: #3dcfb6;
+    font-weight: 700;
   }
 }
 
@@ -123,11 +129,16 @@ section {
 }
 
 .right-side {
+  width: 45%;
+}
+
+.skill-set {
   display: flex;
   flex-wrap: wrap;
   gap: 70px;
-  width: 50%;
+
   text-align: center;
+  position: relative;
 
   p {
     word-break: break-all;
@@ -145,5 +156,4 @@ section {
   flex-direction: column;
   word-break: normal;
   align-items: center;
-
 }

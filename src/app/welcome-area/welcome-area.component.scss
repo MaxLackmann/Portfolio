@@ -189,18 +189,18 @@ section {
     content: ""; /* Erzeugt das Pseudo-Element */
     position: absolute;
     top: 50%;
-    right: -10px; /* Abstand nach unten unterhalb des Texts */
+    right: -8px; /* Abstand nach unten unterhalb des Texts */
     transform: translateY(-50%);
-    width: 0px; /* Startet mit 0 Breite */
-    height: 0px; /* Startet mit 0 Höhe */
+    width: 8px;
+    height: 8px;
+    opacity: 0;
     background-color: #3dcfb6; /* Farbe des Punkts */
     border-radius: 50%; /* Macht es rund */
-    transition: width 0.3s ease, height 0.3s ease; /* Sanfter Übergang */
+    transition: opacity 0.3s ease-in-out; /* Sanfter Übergang */
   }
 
   a:hover::after {
-    width: 8px; /* Breite des Punkts beim Hovern */
-    height: 8px; /* Höhe des Punkts beim Hovern */
+    opacity: 1;
   }
 }
 
