@@ -20,41 +20,43 @@
       </div>
     </div>
     <div class="right-side">
-      <div class="contact-formular">
-        <div class="top-side">
-          <div class="input">
-            <span>What's your email?</span>
-            <input type="text" placeholder="Your name goes here" />
-          </div>
-          <div class="input">
-            <span>What's your email?</span>
-            <input type="email" placeholder="youremail@email.com" />
-          </div>
-          <div class="input">
-            <span>What's your email?</span>
-            <textarea
-              type="text"
-              placeholder="Hallo Max, I am interested in..."
-              rows="1"
-            ></textarea>
-          </div>
+      <div class="top-side">
+        <div class="input">
+          <span>What's your email?</span>
+          <input type="text" placeholder="Your name goes here" />
         </div>
-        <div class="bottom-side">
-          <div class="send-contact">
-            <input type="checkbox" id="check" class="checkbox" />
-            <label for="check">
-              I've read the <a href="#">privacy policy</a> and agree to the
-              processing of my data aus outlined
-            </label>
-          </div>
-          <div class="btn-container">
-            <button>Say Hello ;)</button>
+        <div class="input">
+          <span>What's your email?</span>
+          <input type="email" placeholder="youremail@email.com" />
+        </div>
+        <div class="input">
+          <span>What's your email?</span>
+          <textarea
+            type="text"
+            placeholder="Hallo Max, I am interested in..."
+            rows="1"
+          ></textarea>
+        </div>
+      </div>
+      <div class="bottom-side">
+        <div class="send-contact">
+          <input type="checkbox" id="check" class="checkbox" />
+          <label for="check">
+            I've read the <a href="#">privacy policy</a> and agree to the
+            processing of my data aus outlined
+          </label>
+        </div>
+        <div class="btn-container">
+          <button>Say Hello ;)</button>
+          <div *ngIf="isMobileView" class="scroll-up responsive">
+            <img src="./assets/scroll-down-arrow.svg" alt="" />
           </div>
         </div>
       </div>
     </div>
-    <div class="scroll-up">
+    <div *ngIf="!isMobileView" class="scroll-up">
       <img src="./assets/scroll-down-arrow.svg" alt="" />
     </div>
   </div>
+  
 </section>

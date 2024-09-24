@@ -10,8 +10,19 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 selectedOption: any;
+status: boolean = false;
 
-  constructor() { }
+  constructor() {
+    
+  }
+
+  
+  clickEvent() {
+    this.status = !this.status;
+  }
+  clickEventLogo() {
+    this.status = false;
+  }
 
   // switch(value) {
   //   case 1:

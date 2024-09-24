@@ -189,7 +189,7 @@ section {
     content: ""; /* Erzeugt das Pseudo-Element */
     position: absolute;
     top: 50%;
-    right: -8px; /* Abstand nach unten unterhalb des Texts */
+    left: -12px; /* Abstand nach unten unterhalb des Texts */
     transform: translateY(-50%);
     width: 8px;
     height: 8px;
@@ -221,6 +221,22 @@ section {
   ); /* Grauer Streifen mit 50% Transparenz */
   z-index: 5;
   backdrop-filter: blur(2px);
+
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3dcfb6;
+    margin: 0 16px;
+    border-bottom: 1px solid transparent; /* Unsichtbarer Rand im Normalzustand */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Übergangseffekt */
+  }
+  
+  a:hover {
+    color: white;
+    border-bottom-color: #3dcfb6; /* Sichtbarer Rand beim Hover */
+  }
+
 }
 
 .marquee-content {
@@ -228,7 +244,7 @@ section {
   align-items: center;
   font-size: 20px;
   margin-right: 20px;
-  animation: marquee 10s linear infinite;
+  animation: marquee 16s linear infinite;
   z-index: 6;
 }
 
@@ -249,5 +265,43 @@ section {
 
   100% {
     transform: translateX(-35%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+  h1 {
+    font-size: 80px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+}
+}
+
+@media (max-width: 768px) {
+  .left-lateral {
+    .seperator {
+      height: 140px;
+    }
+  }
+  .right-lateral {
+    .seperator {
+      height: 110px;
+    }
+  }
+  .marquee-container {
+    bottom: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-content {
+    h1 {
+      font-size: 54px;
+    }
+    h2 {
+      font-size: 24px;
+    }
   }
 }

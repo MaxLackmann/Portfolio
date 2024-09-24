@@ -1,8 +1,6 @@
 section {
   background: #1c1c1c;
   margin: 0 auto;
-  max-height: 650px;
-  height: 100vh;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -13,10 +11,8 @@ section {
   width: 100%;
   max-width: 1440px;
   display: flex;
-  align-items: center;
   justify-content: center;
   position: relative;
-  padding: 60px 0;
   gap: 24px;
 }
 
@@ -48,13 +44,13 @@ section {
 .information-title {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .information-text {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
 }
 
 .right-side {
@@ -62,16 +58,18 @@ section {
   height: 100%;
   width: 50%;
   align-items: flex-start;
-
-  .contact-formular {
-    display: flex;
-    flex-direction: column;
-  }
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .top-side {
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  span {
+    color: #3dcfb6;
+  }
 }
 
 .input {
@@ -185,14 +183,15 @@ section {
 .bottom-side {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px;
+  gap: 48px;
+  padding: 32px 16px 0 16px;
   border-top: #3dcfb6 1px solid;
 
   .btn-container {
     display: flex;
     justify-content: center;
     width: 100%;
+    position: relative;
   }
 
   button {
@@ -208,8 +207,8 @@ section {
 
 .scroll-up {
   position: absolute;
-  bottom: 0;
-  left : 0;
+  bottom: 10%;
+  left: 0;
   height: 48px;
   width: 30px;
   border-radius: 32px;
@@ -232,4 +231,39 @@ section {
   50% {
     transform: translateY(-5px);
   }
+}
+
+
+@media (max-width: 1024px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side {
+    width: 100%;
+
+    .bottom-side {
+      width: 100%;
+      padding: 32px 0 0 0;
+
+      .send-contact {
+        padding: 0 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-up {
+    bottom: 0;
+  }
+}
+
+@media (max-width: 500px) {
+
 }

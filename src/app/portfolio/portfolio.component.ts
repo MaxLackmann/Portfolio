@@ -12,23 +12,39 @@ export class PortfolioComponent {
   hoveredProject: number | null = null;
   projects: {
     projectName: string;
-    skills: string[];
     projectImage: string[];
+    skills: string[];
+    skillImages: string[];
+    githublink: string;
+    livetestlink: string;
+    description: string;
   }[] = [
     {
       projectName: 'Join',
-      skills: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
+      skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
       projectImage: ['./assets/join.svg'],
+      skillImages: [],
+      githublink: '',
+      livetestlink: '',
+      description: '',
     },
     {
       projectName: 'El Pollo Loco',
       skills: ['HTML', 'CSS', 'JavaScript'],
       projectImage: ['./assets/elpolloloco.svg'],
+      skillImages: [],
+      githublink: '',
+      livetestlink: '',
+      description: '',
     },
     {
       projectName: 'DaBubble',
       skills: ['Angular', 'Firebase', 'TypeScript'],
       projectImage: ['./assets/dabubble.svg'],
+      skillImages: [],
+      githublink: '',
+      livetestlink: '',
+      description: '',
     },
   ];
 

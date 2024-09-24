@@ -2,9 +2,10 @@
   position: absolute;
   width: 100%;
   max-width: 1440px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 24px 64px;
+  padding: 0 64px;
   align-items: center;
   left: 50%;
   transform: translate(-50%);
@@ -74,7 +75,7 @@
 .picked {
   color: white !important;
   background-color: #3dcfb6;
-border: #3dcfb6 1px solid;
+  border: #3dcfb6 1px solid;
   border-radius: 100px;
 }
 
@@ -94,10 +95,11 @@ border: #3dcfb6 1px solid;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-90deg);
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
   color: #3dcfb6;
   margin-bottom: -45px;
-  margin-left: -20px;
+  margin-left: -40px;
 }
 .m {
   margin-right: -7px;
@@ -127,11 +129,165 @@ border: #3dcfb6 1px solid;
 .logo:hover .l {
   transition: 500ms;
   color: transparent;
-  -webkit-text-stroke: 1px #5cd1b9;
+  -webkit-text-stroke: 1px #3dcfb6;
 }
 
 .logo:hover .name {
   transition: 300ms;
   color: transparent;
   -webkit-text-stroke: 1px white;
+}
+
+.d-none {
+  display: none;
+}
+
+@media (max-width: 1440px) {
+  .header {
+    padding: 0 64px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+  }
+  .menu {
+    display: none;
+  }
+
+  .content {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    float: right;
+  }
+
+
+
+  .burger {
+    width: 32px;
+    cursor: pointer;
+    right: 2rem;
+    top: 2rem;
+    z-index: 20;
+    display: block;
+    z-index: 5;
+  }
+
+  .burger span {
+    width: 100%;
+    height: 4px;
+    background-color: #3dcfb6;
+    border-radius: 12px;
+    display: block;
+    transition: background-color 0.5s ease-in-out;
+  }
+
+  .burger span::before,
+  .burger span::after {
+    content: "";
+    width: 100%;
+    background-color: #3dcfb6;
+    display: block;
+    transition: all 0.5s ease-in-out;
+    border-radius: 12px;
+    height: 4px;
+  }
+
+  .burger span::before {
+    transform: translateY(-10px);
+  }
+
+  .burger span::after {
+    transform: translateY(10px);
+    margin-top: -4px;
+  }
+
+  .burger.active span {
+    background-color: transparent;
+  }
+
+  .burger.active span::before {
+    transform: rotateZ(45deg) translateY(0);
+  }
+
+  .burger.active span::after {
+    transform: rotateZ(-45deg) translateY(0);
+  }
+
+    .background-menu.active {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      opacity: 0.8;
+      z-index: 5;
+    }
+
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-mobile.active {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 200px;
+    padding-inline-start: 0;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #3dcfb6;
+    border-radius: 20px;
+    padding: 24px 16px;
+    background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+    z-index: 10;
+
+    a {
+      position: relative;
+      text-decoration: none; /* Entfernt die Standard-Unterstreichung */
+    }
+
+    a::after {
+      content: ""; /* Erzeugt das Pseudo-Element */
+      position: absolute;
+      left: 50%;
+      bottom: -8px; /* Abstand nach unten unterhalb des Texts */
+      transform: translateX(-50%);
+      opacity: 0;
+      width: 8px;
+      height: 8px;
+      background-color: #3dcfb6; /* Farbe des Punkts */
+      border-radius: 50%; /* Macht es rund */
+      transition: opacity 0.3s ease-in-out; /* Sanfter Übergang */
+    }
+
+    a:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    padding: 0 8px;
+  }
+  .name {
+    display: none;
+  }
 }

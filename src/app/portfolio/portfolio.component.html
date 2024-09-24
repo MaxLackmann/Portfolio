@@ -7,7 +7,7 @@
     </div>
 
     <div class="projects">
-      <div class="left-side">
+      <div class="projects-container">
         <div
           class="project-list"
           *ngFor="let project of projects; let i = index"
@@ -25,17 +25,13 @@
               <span class="small-separator" *ngIf="!isLast"> | </span>
             </span>
           </div>
+          <div class="image-test" [ngClass]="{ 'active-image': hoveredProject === i }">
+            <img [src]="project.projectImage" alt="" />
+            <div class="background-stripes"></div>
+            <div class="overlay"></div>
+          </div>
         </div>
       </div>
-      <div class="project-images">
-        <div class="image-test" *ngFor="let project of projects; let i = index"
-        [ngClass]="{ 'active-image': hoveredProject === i }"
-        [ngStyle]="{top: (i * 16) + '%'}">      
-          <img [src]="project.projectImage" alt="" />
-          <div class="background-stripes"></div>
-        </div>
-      </div>
-      <div class="overlay"></div>
     </div>
   </div>
 </section>
