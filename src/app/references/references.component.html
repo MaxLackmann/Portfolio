@@ -20,9 +20,14 @@
         </div>
       </div>
     </div>
-    <div class="slide-buttons">
+      <div class="slide-buttons">
       <button (click)="prevCard()">&#10094;</button>
-      <span> &bull; &bull; &bull;</span>
+      <div class="dots">
+        <div *ngFor="let state of dotAnimationState; let i = index"
+             class="dot" 
+             [ngClass]="{'highlight': state}">
+        </div>
+      </div>
       <button (click)="nextCard()">&#10095;</button>
     </div>
   </div>

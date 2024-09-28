@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class WelcomeAreaComponent {
   marqueeItems = [
-    { content: 'Fullstack Developer' },
+    { content: 'Frontend Developer' },
     { content: 'Based in Erkrath' },
     { content: 'Open to work' },
     { content: 'Available for remote work' },

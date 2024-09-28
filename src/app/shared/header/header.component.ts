@@ -6,17 +6,14 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-selectedOption: any;
-status: boolean = false;
+  selectedLanguage: string = 'EN';
+  status: boolean = false;
 
-  constructor() {
-    
-  }
+  constructor() {}
 
-  
   clickEvent() {
     this.status = !this.status;
   }
@@ -24,15 +21,8 @@ status: boolean = false;
     this.status = false;
   }
 
-  // switch(value) {
-  //   case 1:
-  //     // Code für Wert 1
-  //     break;
-  //   case 2:
-  //     // Code für Wert 2
-  //     break;
-  //   default:
-  //     // Standardfall
-  // }
+  toggleLanguage() {
+    // Umschalten der Sprache zwischen 'EN' und 'DE'
+    this.selectedLanguage = this.selectedLanguage === 'EN' ? 'DE' : 'EN';
+  }
 }
-

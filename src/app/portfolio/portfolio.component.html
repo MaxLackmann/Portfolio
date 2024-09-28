@@ -3,7 +3,10 @@
     <div class="head">
       <span>Portfolio</span>
       <h1>Featured Projects</h1>
-      <p>Take a look at some of my projects</p>
+      <p>
+        Take a look at some of my projects - Interact with them to see my skills
+        in action
+      </p>
     </div>
 
     <div class="projects">
@@ -13,22 +16,86 @@
           *ngFor="let project of projects; let i = index"
           (mouseover)="setHoveredProject(i)"
           (mouseleave)="clearHoveredProject()"
+          (click)="openModal(project, i)"
         >
           <div class="project-name">
             <h2>{{ project.projectName }}</h2>
             <img src="./assets/portfolio-arrow.svg" alt="" />
           </div>
-
           <div class="project-skills">
             <span *ngFor="let skill of project.skills; let isLast = last">
               {{ skill }}
               <span class="small-separator" *ngIf="!isLast"> | </span>
             </span>
           </div>
-          <div class="image-test" [ngClass]="{ 'active-image': hoveredProject === i }">
+          <div
+            class="image-test"
+            [ngClass]="{ 'active-image': hoveredProject === i }"
+          >
             <img [src]="project.projectImage" alt="" />
             <div class="background-stripes"></div>
-            <div class="overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" *ngIf="showModal">
+      <div class="modal-content">
+        <div class="left-side">
+          <div class="header">
+            <h1>{{ selectedProject?.index + 1 }}</h1>
+            <!-- Hier um 1 erhöhen -->
+            <h2>{{ selectedProject?.projectName }}</h2>
+          </div>
+          <div class="information">
+            <h3>What is this project about?</h3>
+            <p>{{ selectedProject?.description }}</p>
+
+            <!-- Skills und Bilder -->
+            <div class="skills">
+              <div
+                *ngFor="let skill of selectedProject?.skills; let i = index"
+                class="skill-item"
+              >
+                <img
+                  [src]="selectedProject?.skillImages[i]"
+                  [alt]="skill"
+                  class="skill-image"
+                />
+                <span>{{ skill }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="links">
+            <button class="btn">
+              <a [href]="selectedProject?.githublink || '#'" target="_blank">
+                GitHub
+              </a>
+              <img src="./assets/popup-window/portfolio-arrow.svg" alt="" />
+            </button>
+            <button class="btn">
+              <a [href]="selectedProject?.livetestlink || '#'" target="_blank">
+                Live Test
+              </a>
+              <img src="./assets/popup-window/portfolio-arrow.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="right-side">
+          <span class="close-container" (click)="closeModal()">
+            <img
+              class="closer"
+              src="./assets/popup-window/close.svg"
+              alt="Close Modal"
+            />
+          </span>
+
+          <img
+            [src]="selectedProject?.projectImage[0]"
+            alt="{{ selectedProject?.projectName }}"
+          />
+          <div class="next-project" (click)="nextProject()">
+            <span>Next project</span>
+            <img src="./assets/popup-window/portfolio-arrow.svg" alt="" />
           </div>
         </div>
       </div>

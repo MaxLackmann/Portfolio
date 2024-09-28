@@ -1,6 +1,7 @@
 footer {
   background: #1c1c1c;
   overflow: hidden;
+  padding: 60px 64px 0 64px;
 }
 
 .footer-container {
@@ -143,15 +144,9 @@ footer {
   gap: 8px;
 }
 
-@media (max-width: 1440px) {
-  footer {
-    padding: 0 64px;
-  }
-}
-
 @media (max-width: 1024px) {
   footer {
-    padding: 0 32px;
+    padding: 60px 32px 0 32px;
   }
   .mid-side {
     position: absolute;
@@ -163,7 +158,7 @@ footer {
 
 @media (max-width: 768px) {
   footer {
-    padding: 0 16px;
+    padding: 60px 16px 0 16px;
   }
   .left-side {
     display: flex;
@@ -180,6 +175,6 @@ footer {
 
 @media (max-width: 500px) {
   .footer {
-    padding: 0 8px;
+    padding: 60px 8px 0 8px;
   }
 }

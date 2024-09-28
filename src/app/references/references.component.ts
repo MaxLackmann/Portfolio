@@ -11,33 +11,44 @@ import { Component } from '@angular/core';
 export class ReferencesComponent {
   comments: { name: string; description: string }[] = [
     {
-      name: 'Lukas',
-      description: 'I am very satisfied with the service. I really enjoyed it',
+      name: "Yassin Benjelloun",
+      description: "I appreciate the service; it made a positive impact on my experience."
     },
     {
-      name: 'Marco Dos Santos',
-      description: 'very professional and efficient work. I am very satisfied',
+      name: "Marco Angermann",
+      description: "I found the collaboration to be very professional and efficient."
     },
     {
-      name: 'Stefan',
-      description: 'I am very satisfied with the quality. Excellent support!',
+      name: "Lukas Nolting",
+      description: "I was impressed with the quality of work and the supportive atmosphere."
     },
     {
-      name: 'Markus',
-      description: 'The team did a great job and delivered on time.',
+      name: "James Dunn",
+      description: "I value how well the deadlines were met; it was a smooth process."
     },
-    { name: 'Benedikt', description: 'Very professional and efficient work.' },
     {
-      name: 'Raupke',
-      description: 'I highly recommend this team for their dedication.',
+      name: "Nafi Müftüoglu",
+      description: "I enjoyed working with a dedicated and professional team player."
     },
+    {
+      name: "John Smith",
+      description: "I'm grateful for the commitment shown during our collaboration."
+    }
   ];
 
   currentIndex = 0;
   visibleCards: any = [];
+  dotAnimationState: boolean[] = [];
+  animationDirection: 'next' | 'prev' = 'next'; // Track the direction of the animation
 
   constructor() {
     this.updateVisibleCards();
+    this.initializeDotAnimationState(); // Initialize dots to white
+  }
+
+  initializeDotAnimationState() {
+    const totalDots = Math.min(this.comments.length, 3);
+    this.dotAnimationState = Array(totalDots).fill(false); // Set initial dots to active (white)
   }
 
   updateVisibleCards() {
@@ -53,20 +64,26 @@ export class ReferencesComponent {
   }
 
   nextCard() {
+    this.animationDirection = 'next'; // Set direction for next card
     this.animateSlide('next');
+    this.startDotAnimation(); // Use updated animation logic
     setTimeout(() => {
       this.currentIndex = (this.currentIndex + 1) % this.comments.length;
       this.updateVisibleCards();
-    }, 500); // Match the duration of the CSS transition
+      this.resetDotAnimationState();
+    }, 500);
   }
 
   prevCard() {
+    this.animationDirection = 'prev'; // Set direction for previous card
     this.animateSlide('prev');
+    this.startDotAnimation(); // Use updated animation logic
     setTimeout(() => {
       this.currentIndex =
         (this.currentIndex - 1 + this.comments.length) % this.comments.length;
       this.updateVisibleCards();
-    }, 500); // Match the duration of the CSS transition
+      this.resetDotAnimationState();
+    }, 500);
   }
 
   animateSlide(direction: string) {
@@ -82,6 +99,33 @@ export class ReferencesComponent {
       setTimeout(() => {
         cardContainer.style.transition = 'transform 0.5s ease-in-out';
       }, 50);
+    }, 500);
+  }
+
+  startDotAnimation() {
+    this.dotAnimationState = this.dotAnimationState.map(() => false);
+    const totalDots = Math.min(this.comments.length, 3);
+    
+    if (this.animationDirection === 'next') {
+      // Left to Right animation
+      for (let i = 0; i < totalDots; i++) {
+        setTimeout(() => {
+          this.dotAnimationState[i] = true; // Activate dot
+        }, i * 150);
+      }
+    } else {
+      // Right to Left animation
+      for (let i = totalDots - 1; i >= 0; i--) {
+        setTimeout(() => {
+          this.dotAnimationState[i] = true; // Activate dot
+        }, (totalDots - 1 - i) * 150);
+      }
+    }
+  }
+
+  resetDotAnimationState() {
+    setTimeout(() => {
+      this.dotAnimationState.fill(false);
     }, 500);
   }
 }

@@ -1,8 +1,9 @@
 <header class="header">
-  <div [ngSwitch]="selectedOption" class="menu">
-    <button class="translation">
-      <span class="picked">EN</span>
-      <span>DE</span>
+  <div class="menu">
+    <button class="translation" (click)="toggleLanguage()">
+      <!-- Anzeige der aktiven Sprache basierend auf selectedLanguage -->
+      <span [class.picked]="selectedLanguage === 'EN'">EN</span>
+      <span [class.picked]="selectedLanguage === 'DE'">DE</span>
     </button>
     <a href="">About me</a>
     <a href="">Skills</a>
@@ -44,12 +45,11 @@
         >About me</a
       >
 
-      <button class="translation" > <!--(click)="clickEventLogo()" -->
+      <button class="translation">
+        <!--(click)="clickEventLogo()" -->
         <span class="picked">EN</span>
         <span>DE</span>
       </button>
-
-      
     </ul>
   </div>
 </header>

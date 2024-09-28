@@ -1,0 +1,81 @@
+{
+    "header": {
+      "about me": "Über mich",
+      "skills": "Fähigkeiten",
+      "projects": "Projekte"
+    },
+    "welcome-area": {
+      "button1": "Sieh dir meine Arbeit an",
+      "button2": "Kontaktiere mich",
+      "span1": "Frontend-Entwickler",
+      "span2": "mit Sitz in Erkrath",
+      "span3": "Offen für neue Aufträge",
+      "span4": "Verfügbar für Remote-Arbeit"
+    },
+    "aboutme": {
+      "title": "Wer ich bin",
+      "aboutme": "Über mich",
+      "text1": "Ich bin ein leidenschaftlicher 27-jähriger Frontend-Entwickler aus Erkrath. Getrieben von Neugier und einem ständigen Lernwillen, liebe ich es, visuell ansprechende und intuitive Websites und Anwendungen zu erstellen. Mit einer starken Arbeitsmoral und Hingabe freue ich mich darauf, die Grenzen des Möglichen in der Webentwicklung weiter zu verschieben.",
+      "text2": "Flexibel in Bezug auf Arbeitsumgebungen bin ich offen für Möglichkeiten sowohl in und um Erkrath als auch für Remote-Positionen.",
+      "text3": "Ich bin immer auf der Suche nach neuen Herausforderungen, die mir helfen, persönlich zu wachsen und meine Fähigkeiten und mein Wissen zu erweitern.",
+      "text4": "Für mich ist Programmierung mehr als nur das Schreiben von Code – es ist ein kreativer Ansatz zur Lösung von Problemen. Ich gedeihe darin, komplexe Herausforderungen in intuitive, benutzerfreundliche Lösungen zu vereinfachen, um Ihnen zu helfen, Ihre Ideen in die Realität umzusetzen und Ihre Ziele zu erreichen."
+    },
+    "skills": {
+      "title": "Technologien",
+      "skillset": "Fähigkeiten",
+      "skillsettext": "Als aufstrebender Frontend-Entwickler bin ich leidenschaftlich an modernem Webdesign und der Schaffung innovativer Benutzererlebnisse interessiert. Mit jeder neuen Herausforderung wachse ich und verbessere kontinuierlich meine Fähigkeiten, um elegante, effiziente und benutzerfreundliche Lösungen zu entwickeln. Mein Ziel ist es, Designs zu entwickeln, die nicht nur funktional, sondern auch visuell ansprechend sind.",
+      "title2": "Brauchen Sie eine andere Fähigkeit?",
+      "text": "Fühlen Sie sich frei, mich zu kontaktieren. Ich bin offen für neue und spannende Projekte.",
+      "button": "Lass uns reden",
+      "mindset": "Ich habe ein besonderes Interesse am Lernen"
+    },
+    "portfolio": {
+      "featured projects": "Ausgewählte Projekte",
+      "text": "Sehen Sie sich einige meiner Projekte an – Interagieren Sie mit ihnen, um meine Fähigkeiten und Erfahrungen in Aktion zu sehen."
+    },
+    "portfolio-modal": {
+      "modaltitle": "Worum geht es in diesem Projekt?",
+      "description": "Ein kanbanbasiertes Aufgabenmanagement-System, das es Ihnen ermöglicht, Aufgaben durch Drag-and-Drop-Funktionen zu erstellen, zu sortieren und zu verwalten. Weisen Sie Aufgaben Benutzern zu und kategorisieren Sie sie ganz einfach.",
+      "nextbutton": "nächstes Projekt"
+    },
+    "references": {
+      "title": "Was meine Kollegen über mich sagen",
+      "description1": "Ich schätze den Service; er hatte einen positiven Einfluss auf meine Erfahrung.",
+      "description2": "Ich fand die Zusammenarbeit sehr professionell und effizient.",
+      "description3": "Ich war von der Qualität der Arbeit und der unterstützenden Atmosphäre beeindruckt.",
+      "description4": "Ich schätze, wie gut die Fristen eingehalten wurden; es war ein reibungsloser Prozess.",
+      "description5": "Ich habe die Zusammenarbeit mit einem engagierten und professionellen Teamplayer genossen.",
+      "description6": "Ich bin dankbar für das Engagement, das während unserer Zusammenarbeit gezeigt wurde."
+    },
+    "contact": {
+      "contact": "Kontaktiere mich",
+      "title1": "Lass uns zusammenarbeiten",
+      "title2": "Hast du ein Problem zu lösen?",
+      "text1": "Fühlen Sie sich frei, mich zu kontaktieren! Ich würde gerne Ihre Ideen hören und erkunden, wie ich zu Ihren Projekten beitragen kann.",
+      "text2": "Suchen Sie einen Frontend-Entwickler? Lass uns reden!"
+    },
+    "contact-form": {
+      "name": "Wie heißen Sie?",
+      "email": "Was ist Ihre E-Mail?",
+      "message": "Ihre Nachricht",
+      "placeholder": "Ihr Name kommt hierhin",
+      "small1": "Name ist erforderlich",
+      "placeholder2": "Ihre E-Mail kommt hierhin",
+      "small2": "E-Mail ist erforderlich",
+      "placeholder3": "Hallo Max, ich interessiere mich für...",
+      "small3": "Mindestens 10 Wörter erforderlich",
+      "checkbox": "Ich habe die Datenschutzrichtlinie gelesen und stimme der Verarbeitung meiner Daten zu, wie sie dargelegt ist.",
+      "button": "Sag Hallo ;)"
+    },
+    "footer": {
+      "webdeveloper": "Webentwickler",
+      "location": "Erkrath, Deutschland",
+      "legalnotice": "Impressum"
+    },
+    "legalnotice": {
+  
+    },
+    "imprint": {
+  
+    }
+  }

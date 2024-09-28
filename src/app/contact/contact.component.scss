@@ -161,6 +161,36 @@ section {
   }
 }
 
+
+small {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 16px; /* Reserve space for the validation messages */
+  visibility: hidden; /* Hide the element but keep its space */
+}
+
+small.ng-visible {
+  visibility: visible; /* Show the element when it has an error */
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  height: 20px;
+  margin-top: 4px;
+  visibility: hidden; /* Standardmäßig unsichtbar */
+}
+
+.error-message.ng-visible {
+  visibility: visible; /* Nur anzeigen, wenn der Fehler sichtbar ist */
+}
+
+.input input.ng-invalid.ng-touched,
+.input textarea.ng-invalid.ng-touched {
+  border-bottom-color: red; /* Rote Unterstreichung bei Fehler */
+}
+
 /* Keyframes für die Animation */
 @keyframes fly-around {
   0% {
@@ -203,11 +233,28 @@ section {
     padding: 12px 24px;
     width: 140px;
   }
+
+  button:disabled {
+    background-color: #555; /* Darker color when disabled */
+    color: #ccc; /* Light color for text */
+    cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+    opacity: 0.5; /* Slightly transparent */
+  }
+}
+
+.invalid {
+  border: 1px solid red; /* Rote Umrandung für ungültige Felder */
+}
+
+small {
+  color: red; /* Rote Farbe für Fehlermeldungen */
+  font-size: 12px; /* Kleinere Schriftgröße für Fehlermeldungen */
+  margin-top: 4px; /* Abstand zwischen Eingabefeld und Fehlermeldung */
 }
 
 .scroll-up {
   position: absolute;
-  bottom: 10%;
+  bottom: 0;
   left: 0;
   height: 48px;
   width: 30px;
@@ -232,7 +279,6 @@ section {
     transform: translateY(-5px);
   }
 }
-
 
 @media (max-width: 1024px) {
   .contact {
@@ -262,8 +308,10 @@ section {
   .scroll-up {
     bottom: 0;
   }
+  .error-message {
+    height: auto; /* Automatische Höhe auf kleineren Bildschirmen */
+  }
 }
 
 @media (max-width: 500px) {
-
 }

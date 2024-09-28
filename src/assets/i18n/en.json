@@ -1,0 +1,83 @@
+{
+  "header": {
+    "about me": "About me",
+    "skills": "Skills",
+    "proejcts": "Projects"
+  },
+  "welcome-area": {
+    "button1": "Check my work",
+    "button2": "Contact me",
+    "span1": "Frontend Developer",
+    "span2": "based in Erkrath",
+    "span3": "Open to work",
+    "span4": "Available for remote work"
+  },
+  "aboutme": {
+    "title": "Who I am",
+    "aboutme": "About me",
+    "text1": "I'm a passionate 27-year-old Frontend Developer from Erkrath. Driven by curiosity and a constant desire to learn, I love creating visually striking and intuitive websites and applications. With a strong work ethic and dedication, I'm excited to keep pushing the boundaries of what's possible in web development.",
+    "text2": "Flexible in terms of work environments, I am open to opportunities both in and around Erkrath, as well as remote positions.",
+    "text3": "I'm always eager for new challenges that help me grow personally and enhance my skills and knowledge.",
+    "text4": "For me, programming is more than just writing code—it's a creative approach to solving problems. I thrive on simplifying complex challenges into intuitive, user-friendly solutions, helping you turn your ideas into reality and achieve your goals."
+  },
+  "skills": {
+    "title": "Technologies",
+    "skillset": "Skill Set",
+    "skillsettext": "As an emerging Frontend Developer, I am passionate about modern web design and creating innovative user experiences. With each new challenge, I grow and continuously improve my skills to build elegant, efficient, and user-friendly solutions. My goal is to develop designs that are not only functional but also visually captivating.",
+    "title2": "You need another skill?",
+    "text": "Feel free to Contact me. I am open for new and exciting projects.",
+    "button": "Let's Talk",
+    "mindset": "I have an special interest in learning"
+  },
+  "portfolio": {
+    "featured projects": "Featured Projects",
+    "text": "Take a look at some of my projects - Interact with them to see my skills and experience in action"
+  },
+  "portfolio-modal": {
+    "modaltitle" : "What is this project about?",
+        "description" : "A Kanban-based task management system that allows you to create, sort, and manage tasks through drag-and-drop features. Assign tasks to users and categorize them with ease.",
+        "nextbutton" : "next project"
+  },
+  "references": {
+    "title": "What my colleagues say about me",
+    "description1": "I appreciate the service; it made a positive impact on my experience.",
+    "description2": "I found the collaboration to be very professional and efficient.",
+    "description3": "I was impressed with the quality of work and the supportive atmosphere.",
+    "description4": "I value how well the deadlines were met; it was a smooth process.",
+    "description5": "I enjoyed working with a dedicated and professional team player.",
+    "description6": "I'm grateful for the commitment shown during our collaboration."
+
+  },
+  "contact": {
+    "contact": "Contact me",
+    "title1" : "Let's work together",
+    "title2" : "Got a problem to solve?",
+    "text1" : "Feel free to reach out! I'd love to hear your ideas and explore how I can contribute to your projects.",
+    "text2" : "Looking for a Frontend developer? Let's talk!"
+  },
+  "contact-form": {
+    "name": "What is your name?",
+    "email": "What is your email?",
+    "message": "Your message",
+    "placeholder": "Your name goes here",
+    "small1": "Name is required",
+    "placeholder2": "Your email goes here",
+    "small2": "Email is required",
+    "placeholder3": "Hallo Max, I am interested in...",
+    "small3": "At least 10 words required",
+    "checkbox": "I've read the privacy policy and agree to the processing of my data as outlined.",
+    "button": "Sag Hallo ;)"
+
+  },
+  "footer": {
+    "webdeveloper": "Web Developer",
+    "location" : "Erkrath, Germany",
+    "legalnotice" : "Legal Notice"
+  },
+  "legalnotice": {
+
+  },
+  "imprint": {
+
+  }
+}
