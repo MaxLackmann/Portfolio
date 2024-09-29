@@ -89,6 +89,11 @@ section {
   cursor: pointer;
   text-align: center;
 
+  span {
+    color: white;
+    font-weight: 400;
+  }
+
   .text {
     display: inline-block;
     white-space: nowrap;

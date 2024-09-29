@@ -1,61 +1,55 @@
-<header class="header">
-  <div class="menu">
-    <button class="translation" (click)="toggleLanguage()">
-      <!-- Anzeige der aktiven Sprache basierend auf selectedLanguage -->
-      <span [class.picked]="selectedLanguage === 'EN'">EN</span>
-      <span [class.picked]="selectedLanguage === 'DE'">DE</span>
-    </button>
-    <a href="">About me</a>
-    <a href="">Skills</a>
-    <a href="">Projects</a>
-  </div>
-  <div class="logo">
-    <div class="initials">
-      <div class="m">M</div>
-      <div class="l">L</div>
+<header>
+  <div class="header">
+    <div class="menu">
+      <button class="translation" (click)="toggleLanguage()">
+        <span [class.picked]="selectedLanguage === 'EN'">EN</span>
+        <span [class.picked]="selectedLanguage === 'DE'">DE</span>
+      </button>
+      <a href="">About me</a>
+      <a href="">Skills</a>
+      <a href="">Projects</a>
     </div>
-    <!-- <div class="name">
+    <div class="logo">
+      <div class="initials">
+        <div class="m">M</div>
+        <div class="l">L</div>
+      </div>
+      <!-- <div class="name">
         Maximilian <br />
         Lackmann
       </div> -->
-  </div>
-  <div class="content second d-none" (click)="clickEvent()">
-    <div class="burger" [ngClass]="status ? 'active' : ''">
-      <span></span>
     </div>
-    <div class="background-menu" [ngClass]="status ? 'active' : ''"></div>
-    <ul class="nav-mobile" [ngClass]="status ? 'active' : ''">
-      <a
-        href="#portfolio"
-        class="hover-underline-animation"
-        (click)="clickEventLogo()"
-        >Projects</a
-      >
-      <a
-        href="#skills"
-        class="hover-underline-animation"
-        (click)="clickEventLogo()"
-        >Skills</a
-      >
+    <div class="content second d-none" (click)="clickEvent()">
+      <div class="burger" [ngClass]="status ? 'active' : ''">
+        <span></span>
+      </div>
+      <div class="background-menu" [ngClass]="status ? 'active' : ''"></div>
+      <ul class="nav-mobile" [ngClass]="status ? 'active' : ''">
+        <a
+          href="#portfolio"
+          class="hover-underline-animation"
+          (click)="clickEventLogo()"
+          >Projects</a
+        >
+        <a
+          href="#skills"
+          class="hover-underline-animation"
+          (click)="clickEventLogo()"
+          >Skills</a
+        >
 
-      <a
-        href="#about-me"
-        class="hover-underline-animation"
-        (click)="clickEventLogo()"
-        >About me</a
-      >
+        <a
+          href="#about-me"
+          class="hover-underline-animation"
+          (click)="clickEventLogo()"
+          >About me</a
+        >
 
-      <button class="translation">
-        <!--(click)="clickEventLogo()" -->
-        <span class="picked">EN</span>
-        <span>DE</span>
-      </button>
-    </ul>
+        <button class="translation" (click)="toggleLanguage()">
+          <span class="picked">EN</span>
+          <span>DE</span>
+        </button>
+      </ul>
+    </div>
   </div>
 </header>
-
-<!-- <div [ngSwitch]="selectedOption"></div>
-  <div ngSwitchCase="'option1'">Option 1</div>
-  <divngSwitchCase="'option2'">Option 2</div>
-  <div *ngSwitchDefault>Standardoption</div>
-</div> -->
