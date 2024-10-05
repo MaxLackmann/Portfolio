@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
@@ -22,4 +24,7 @@ export class SkillsComponent {
     { imgSrc: './assets/scrum.svg', text: 'Scrum' },
     { imgSrc: './assets/growthmindset.svg', text: 'Growth mindset' },
   ];
+
+  constructor(public translateService: TranslateService) {}
+
 }

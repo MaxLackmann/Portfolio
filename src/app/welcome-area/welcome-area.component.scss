@@ -44,7 +44,7 @@ section {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    padding: 16px;
+    padding: 8px 16px;
     background-color: transparent;
     border: 1px solid #ffffff;
     border-radius: 20px;
@@ -52,22 +52,22 @@ section {
     font-size: 16px;
     cursor: pointer;
     margin-top: 30px;
-    text-align: center; 
-  
+    text-align: center;
+
     .text {
       display: inline-block;
       white-space: nowrap;
       position: relative;
-      transform: translateX(0); 
+      transform: translateX(0);
       transition: none;
     }
-  
+
     &:hover .text {
       animation: button-hover 3s linear infinite;
       transition: all 0.5s ease-in-out;
       color: #3dcfb6;
     }
-  
+
     &:hover {
       transition: all 0.5s ease-in-out;
       border-color: #3dcfb6;
@@ -123,9 +123,15 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   img {
     animation: moveUpDown 2s ease-in-out infinite;
+  }
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    border-color: #ffffff;
   }
 }
 
@@ -210,14 +216,14 @@ section {
   white-space: nowrap;
   position: absolute;
   bottom: 80px;
-  height: 50px;
+  height: 40px;
   rotate: -3deg;
   width: 100vw;
   background-color: rgba(
     128,
     128,
     128,
-    0.5
+    0.1
   ); /* Grauer Streifen mit 50% Transparenz */
   z-index: 5;
   backdrop-filter: blur(2px);
@@ -231,12 +237,11 @@ section {
     border-bottom: 1px solid transparent; /* Unsichtbarer Rand im Normalzustand */
     transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Übergangseffekt */
   }
-  
+
   a:hover {
     color: white;
     border-bottom-color: #3dcfb6; /* Sichtbarer Rand beim Hover */
   }
-
 }
 
 .marquee-content {
@@ -268,15 +273,21 @@ section {
   }
 }
 
-@media (max-width: 1024px) {
-  .main-content {
-  h1 {
-    font-size: 80px;
-  }
-  h2 {
-    font-size: 32px;
+@media (max-width: 1440px) {
+  .marquee-container {
+    bottom: 50px;
   }
 }
+
+@media (max-width: 1024px) {
+  .main-content {
+    h1 {
+      font-size: 80px;
+    }
+    h2 {
+      font-size: 32px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -293,6 +304,11 @@ section {
   .marquee-container {
     bottom: 32px;
   }
+  .btn-container {
+    .btn {
+      padding: 16px 8px;
+    }
+  }
 }
 
 @media (max-width: 500px) {
@@ -303,5 +319,9 @@ section {
     h2 {
       font-size: 24px;
     }
+  }
+
+  .btn-container {
+    flex-direction: column;
   }
 }

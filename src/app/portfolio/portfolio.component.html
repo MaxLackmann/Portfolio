@@ -1,11 +1,11 @@
-<section>
-  <div class="portfolio">
+<section id="portfolio">
+  <div  class="portfolio">
     <div class="head">
       <span>Portfolio</span>
-      <h1>Featured Projects</h1>
+      <h1>{{ "portfolio.featured-projects" | translate }}</h1>
       <p>
-        Take a look at some of my projects - Interact with them to see my skills
-        in action
+        {{ "portfolio.text1" | translate }} <br />
+        {{ "portfolio.text2" | translate }}
       </p>
     </div>
 
@@ -38,63 +38,91 @@
         </div>
       </div>
     </div>
-    <div class="modal" *ngIf="showModal">
-      <div class="modal-content">
-        <div class="left-side">
-          <div class="header">
-            <h1>{{ selectedProject?.index + 1 }}</h1>
-            <!-- Hier um 1 erhöhen -->
-            <h2>{{ selectedProject?.projectName }}</h2>
-          </div>
-          <div class="information">
-            <h3>What is this project about?</h3>
-            <p>{{ selectedProject?.description }}</p>
+    <div class="modal" *ngIf="showModal" (click)="closeModalOnClickOutside($event)">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="close-container" (click)="closeModal()">
+          <img
+            class="closer"
+            src="./assets/popup-window/close.svg"
+            alt="Close Modal"
+          />
+        </div>
+        <div class="mid-container">
+          <div class="left-side">
+            <div class="header">
+              <h1>{{ selectedProject?.index + 1 }}</h1>
+              <!-- Hier um 1 erhöhen -->
+              <h2>{{ selectedProject?.projectName }}</h2>
+            </div>
+            <div class="information">
+              <h3>{{ "portfolio-modal.modaltitle" | translate}}</h3>
+              <p>{{ selectedProject?.description | translate }}</p>
 
-            <!-- Skills und Bilder -->
-            <div class="skills">
-              <div
-                *ngFor="let skill of selectedProject?.skills; let i = index"
-                class="skill-item"
-              >
-                <img
-                  [src]="selectedProject?.skillImages[i]"
-                  [alt]="skill"
-                  class="skill-image"
-                />
-                <span>{{ skill }}</span>
+              <!-- Skills und Bilder -->
+              <div class="skills">
+                <div
+                  *ngFor="let skill of selectedProject?.skills; let i = index"
+                  class="skill-item"
+                >
+                  <img
+                    [src]="selectedProject?.skillImages[i]"
+                    [alt]="skill"
+                    class="skill-image"
+                  />
+                  <span>{{ skill }}</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="links">
-            <button class="btn">
-              <a [href]="selectedProject?.githublink || '#'" target="_blank">
-                GitHub
-              </a>
-              <img class="diagonal-arrow" src="./assets/popup-window/portfolio-arrow.svg" alt="" />
-            </button>
-            <button class="btn">
-              <a [href]="selectedProject?.livetestlink || '#'" target="_blank">
-                Live Test
-              </a>
-              <img class="diagonal-arrow" src="./assets/popup-window/portfolio-arrow.svg" alt="" />
-            </button>
+          <div class="right-side">
+            <img
+              [src]="selectedProject?.projectImage[0]"
+              alt="{{ selectedProject?.projectName }}"
+            />
+            <div class="next-project-mobile" (click)="nextProject()">
+              <span>{{ "portfolio-modal.nextbutton" | translate }}</span>
+              <img src="./assets/popup-window/portfolio-arrow.svg" alt="" />
+            </div>
           </div>
         </div>
-        <div class="right-side">
-          <span class="close-container" (click)="closeModal()">
-            <img
-              class="closer"
-              src="./assets/popup-window/close.svg"
-              alt="Close Modal"
-            />
-          </span>
 
-          <img
-            [src]="selectedProject?.projectImage[0]"
-            alt="{{ selectedProject?.projectName }}"
-          />
+        <div class="bottom-container">
+          <div class="links">
+            <button class="btn">
+              <a
+                [href]="
+                  selectedProject?.githublink ||
+                  'https://github.com/MaxLackmann'
+                "
+                target="_blank"
+              >
+                GitHub
+              </a>
+              <img
+                class="diagonal-arrow"
+                src="./assets/popup-window/portfolio-arrow.svg"
+                alt=""
+              />
+            </button>
+            <button class="btn">
+              <a
+                [href]="
+                  selectedProject?.livetestlink ||
+                  'https://github.com/MaxLackmann'
+                "
+                target="_blank"
+              >
+                Live Test
+              </a>
+              <img
+                class="diagonal-arrow"
+                src="./assets/popup-window/portfolio-arrow.svg"
+                alt=""
+              />
+            </button>
+          </div>
           <div class="next-project" (click)="nextProject()">
-            <span>Next project</span>
+            <span>{{ "portfolio-modal.nextbutton" | translate }}</span>
             <img src="./assets/popup-window/portfolio-arrow.svg" alt="" />
           </div>
         </div>

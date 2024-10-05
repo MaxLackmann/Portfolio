@@ -1,39 +1,41 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-references',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: './references.component.html',
   styleUrls: ['./references.component.scss'],
 })
 export class ReferencesComponent {
   comments: { name: string; description: string }[] = [
     {
-      name: "Yassin Benjelloun",
-      description: "I appreciate the service; it made a positive impact on my experience."
+      name: 'Yassin Benjelloun',
+      description: 'references.description1',
     },
     {
-      name: "Marco Angermann",
-      description: "I found the collaboration to be very professional and efficient."
+      name: 'Marco Angermann',
+      description: 'references.description2',
     },
     {
-      name: "Lukas Nolting",
-      description: "I was impressed with the quality of work and the supportive atmosphere."
+      name: 'Lukas Nolting',
+      description: 'references.description3',
     },
     {
-      name: "James Dunn",
-      description: "I value how well the deadlines were met; it was a smooth process."
+      name: 'James Dunn',
+      description: 'references.description4',
     },
     {
-      name: "Nafi Müftüoglu",
-      description: "I enjoyed working with a dedicated and professional team player."
+      name: 'Nafi Müftüoglu',
+      description: 'references.description5',
     },
     {
-      name: "John Smith",
-      description: "I'm grateful for the commitment shown during our collaboration."
-    }
+      name: 'John Smith',
+      description: 'references.description6',
+    },
   ];
 
   currentIndex = 0;
@@ -41,7 +43,7 @@ export class ReferencesComponent {
   dotAnimationState: boolean[] = [];
   animationDirection: 'next' | 'prev' = 'next'; // Track the direction of the animation
 
-  constructor() {
+  constructor(public translateService: TranslateService) {
     this.updateVisibleCards();
     this.initializeDotAnimationState(); // Initialize dots to white
   }
@@ -87,7 +89,9 @@ export class ReferencesComponent {
   }
 
   animateSlide(direction: string) {
-    const cardContainer = document.querySelector('.card-container') as HTMLElement;
+    const cardContainer = document.querySelector(
+      '.card-container'
+    ) as HTMLElement;
     if (direction === 'next') {
       cardContainer.style.transform = 'translateX(-33.33%)';
     } else {
@@ -105,7 +109,7 @@ export class ReferencesComponent {
   startDotAnimation() {
     this.dotAnimationState = this.dotAnimationState.map(() => false);
     const totalDots = Math.min(this.comments.length, 3);
-    
+
     if (this.animationDirection === 'next') {
       // Left to Right animation
       for (let i = 0; i < totalDots; i++) {

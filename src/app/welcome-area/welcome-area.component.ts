@@ -1,30 +1,34 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-welcome-area',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './welcome-area.component.html',
-  styleUrl: './welcome-area.component.scss'
+  styleUrl: './welcome-area.component.scss',
 })
 export class WelcomeAreaComponent {
   marqueeItems = [
-    { content: 'Frontend Developer' },
-    { content: 'Based in Erkrath' },
-    { content: 'Open to work' },
-    { content: 'Available for remote work' },
+    { content: 'welcome-area.span1' },
+    { content: 'welcome-area.span2' },
+    { content: 'welcome-area.span3' },
+    { content: 'welcome-area.span4' },
   ];
-    emailItem = { content: 'lackmann_max@hotmail.com', isLink: true };
+  emailItem = { content: 'lackmann_max@hotmail.com', isLink: true };
 
-    getItemsWithEmail(): any[] {
-      const itemsWithEmail = [];
-      for (let i = 0; i < this.marqueeItems.length; i++) {
-        itemsWithEmail.push(this.marqueeItems[i]);
-        if ((i + 1) % 2 === 0) {
-          itemsWithEmail.push(this.emailItem); // E-Mail nach jedem zweiten Element einfügen
-        }
+  constructor(public translateService: TranslateService) {}
+
+  getItemsWithEmail(): any[] {
+    const itemsWithEmail = [];
+    for (let i = 0; i < this.marqueeItems.length; i++) {
+      itemsWithEmail.push(this.marqueeItems[i]);
+      if ((i + 1) % 2 === 0) {
+        itemsWithEmail.push(this.emailItem); // E-Mail nach jedem zweiten Element einfügen
       }
-      return itemsWithEmail;
     }
+    return itemsWithEmail;
   }
+}

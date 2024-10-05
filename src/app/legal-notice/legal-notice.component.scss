@@ -1,9 +1,10 @@
 section:not(#shadow-host-companion) {
-  padding: 50px 64px 0 64px;
-  background: #1c1c1c;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
+    padding: 50px 64px 0 64px;
+    background: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: calc(100vh - 210px);
 }
 
 h1 {
@@ -11,6 +12,7 @@ h1 {
 }
 
 h2 {
+  font-size: 40px;
   color: #3dcfb6;
 }
 
@@ -18,25 +20,27 @@ h3 {
   color: #30a793;
 }
 
-a:hover {
-  color: #3dcfb6;
-  text-decoration: underline;
+p {
+  font-size: 24px;
 }
 
-.privacy {
+.legal-notice {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   width: 100%;
   max-width: 1440px;
   padding-top: 90px;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .back-to-menu {
   position: absolute;
   right: 16px;
-  top: 45px;
+  top: 140px;
   height: 40px;
   width: 60px;
   border-radius: 32px;
@@ -68,23 +72,23 @@ a:hover {
 }
 
 @media (max-width: 1024px) {
-  section:not(#shadow-host-companion) {
-    padding: 50px 32px 0 32px;
+    section:not(#shadow-host-companion) {
+      padding: 50px 32px 0 32px;
+    }
   }
-}
+  
+  @media (max-width: 768px) {
+    section:not(#shadow-host-companion) {
+      padding: 50px 16px 0 16px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    section:not(#shadow-host-companion) {
+      padding: 50px 8px 0 8px;
+    }
 
-@media (max-width: 768px) {
-  section:not(#shadow-host-companion) {
-    padding: 50px 16px 0 16px;
+    h1 {
+        font-size: 50px;
+      }
   }
-}
-
-@media (max-width: 500px) {
-  section:not(#shadow-host-companion) {
-    padding: 50px 8px 0 8px;
-  }
-
-  h1 {
-    font-size: 50px;
-  }
-}

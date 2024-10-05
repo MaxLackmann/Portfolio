@@ -1,20 +1,22 @@
-<section>
+<section id="contact">
   <div class="contact">
     <div class="left-side">
       <div class="information-title">
-        <h3>Contact me</h3>
+        <h3>{{ "contact.contact" | translate }}</h3>
         <h1>
-          Let's work <br />
-          together
+          {{ "contact.title1" | translate }} <br />
+          {{ "contact.title1-1" | translate }}
         </h1>
       </div>
       <div class="information-text">
-        <h2>Got a problem to solve?</h2>
+        <h2>{{ "contact.title2" | translate }}</h2>
         <p>
-          Feel free to reach out! I'd love to hear your ideas and explore how I
-          can contribute to your projects.
+          {{ "contact.text1" | translate }}
         </p>
-        <p>Looking for a Frontend developer? <span>Let's talk!</span></p>
+        <p>
+          {{ "contact.text2" | translate }}
+          <span>{{ "contact.text2-1" | translate }}</span>
+        </p>
       </div>
     </div>
     <div class="right-side">
@@ -22,7 +24,7 @@
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
           <!-- Name Input -->
           <div class="input">
-            <span>What's your name?</span>
+            <span>{{ "contact-form.name" | translate }}</span>
             <input
               type="text"
               [ngClass]="{
@@ -30,7 +32,7 @@
                   contactForm.get('name')?.touched &&
                   contactForm.get('name')?.invalid
               }"
-              placeholder="Your name goes here"
+              placeholder="{{ 'contact-form.placeholder' | translate }}"
               formControlName="name"
             />
             <small
@@ -39,13 +41,13 @@
                   contactForm.get('name')?.touched &&
                   contactForm.get('name')?.invalid
               }"
-              >Name is required</small
+              >{{ "contact-form.small1" | translate }}</small
             >
           </div>
 
           <!-- Email Input -->
           <div class="input">
-            <span>What's your email?</span>
+            <span>{{ "contact-form.email" | translate }}</span>
             <input
               type="email"
               [ngClass]="{
@@ -53,7 +55,7 @@
                   contactForm.get('email')?.touched &&
                   contactForm.get('email')?.invalid
               }"
-              placeholder="youremail@email.com"
+              placeholder="{{ 'contact-form.placeholder2' | translate }}"
               formControlName="email"
             />
             <small
@@ -65,15 +67,15 @@
             >
               {{
                 contactForm.get("email")?.hasError("email")
-                  ? "Invalid email"
-                  : "Email is required"
+                  ? ("contact-form.small2-1" | translate)
+                  : ("contact-form.small2" | translate)
               }}
             </small>
           </div>
 
           <!-- Message Input -->
           <div class="input">
-            <span>Your message</span>
+            <span>{{ "contact-form.message" | translate }}</span>
             <textarea
               rows="1"
               [ngClass]="{
@@ -81,7 +83,7 @@
                   contactForm.get('message')?.touched &&
                   contactForm.get('message')?.invalid
               }"
-              placeholder="Hallo Max, I am interested in..."
+              placeholder="{{ 'contact-form.placeholder3' | translate }}"
               formControlName="message"
             ></textarea>
             <small
@@ -92,9 +94,9 @@
               }"
             >
               {{
-                contactForm.get("message")?.hasError("wordCount")
-                  ? "At least 10 words required"
-                  : "Message is required"
+                contactForm.get("message")?.hasError("required")
+                  ? ("contact-form.small3" | translate)
+                  : ("contact-form.small3-1" | translate)
               }}
             </small>
           </div>
@@ -109,30 +111,37 @@
                 formControlName="agree"
               />
               <label for="check">
-                I've read the <a href="#">privacy policy</a> and agree to the
-                processing of my data as outlined.
+                {{ "contact-form.checkbox1" | translate }}
+                <a routerLink="/privacy-policy">{{
+                  "contact-form.checkbox1-1" | translate
+                }}</a>
+                {{ "contact-form.checkbox1-2" | translate }}
               </label>
             </div>
 
             <!-- Submit Button -->
             <div class="btn-container">
               <button type="submit" [disabled]="!contactForm.valid">
-                Say Hello ;)
+                {{ "contact-form.button" | translate }}
               </button>
-              <div *ngIf="isMobileView" class="scroll-up responsive">
+              <a
+                *ngIf="isMobileView"
+                class="scroll-up responsive"
+                href="#welcomearea"
+              >
                 <img src="./assets/scroll-down-arrow.svg" alt="" />
-              </div>
+              </a>
             </div>
           </div>
         </form>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
         <div *ngIf="messageSent" class="success-message">
-          Message sent successfully!
+          {{ "contact-form.sendmessage" | translate }}
         </div>
       </div>
     </div>
-    <div *ngIf="!isMobileView" class="scroll-up">
+    <a *ngIf="!isMobileView" class="scroll-up" href="#welcomearea">
       <img src="./assets/scroll-down-arrow.svg" alt="" />
-    </div>
+    </a>
   </div>
 </section>

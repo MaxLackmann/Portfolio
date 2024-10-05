@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'], // Geändert: styleUrl -> styleUrls
 })
@@ -12,6 +14,8 @@ export class PortfolioComponent {
   hoveredProject: number | null = null;
   selectedProject: any = null; // Das ausgewählte Projekt für das Popup
   showModal: boolean = false; // Steuerung, ob das Modal angezeigt wird
+
+  constructor(public translateService: TranslateService) {}
 
   projects: {
     projectName: string;
@@ -29,8 +33,7 @@ export class PortfolioComponent {
       skillImages: [], // Initial leer
       githublink: '',
       livetestlink: '',
-      description:
-        'A Kanban-based task management system that allows you to create, sort, and manage tasks through drag-and-drop features. Assign tasks to users and categorize them with ease.',
+      description: 'portfolio-modal.description1',
     },
     {
       projectName: 'El Pollo Loco',
@@ -39,7 +42,7 @@ export class PortfolioComponent {
       skillImages: [], // Initial leer
       githublink: '',
       livetestlink: '',
-      description: 'A small jump-and-run game.',
+      description: 'portfolio-modal.description2',
     },
     {
       projectName: 'DaBubble',
@@ -48,7 +51,7 @@ export class PortfolioComponent {
       skillImages: [], // Initial leer
       githublink: '',
       livetestlink: '',
-      description: 'A social media app with real-time chat.',
+      description: 'portfolio-modal.description3',
     },
   ];
 
@@ -85,17 +88,22 @@ export class PortfolioComponent {
     }
 
     // Öffne das Modal mit dem neuen Projekt
-    this.openModal(this.projects[nextIndex ], nextIndex + 1);
+    this.openModal(this.projects[nextIndex], nextIndex);
   }
 
   // Funktion um Bildpfade für die Skills automatisch zu generieren
   addSkillImages(project: any) {
     const assetPath = './assets/popup-window/';
-    project.skillImages = project.skills.map((skill: string) =>
-      `${assetPath}${skill.toLowerCase()}.svg`
+    project.skillImages = project.skills.map(
+      (skill: string) => `${assetPath}${skill.toLowerCase()}.svg`
     );
   }
 
-  // Im Konstruktor die Bilder für jedes Projekt hinzufügen
-  constructor() {}
+  closeModalOnClickOutside(event: MouseEvent) {
+    // Überprüfen, ob das Ziel des Klicks die Modal-Hintergrundschicht (Overlay) ist
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('modal')) {
+      this.closeModal();
+    }
+  }
 }

@@ -6,6 +6,28 @@
   font-style: normal;
 }
 
+/* Für Webkit-basierte Browser (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px; /* Breite des Scrollbalkens */
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2e2b; /* Hintergrundfarbe des Scrollbereichs */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3dcfb6; /* Farbe des Scrollbalkens */
+  border-radius: 6px; /* Abgerundete Ecken des Scrollbalkens */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #36b39f; /* Farbe des Scrollbalkens bei Hover */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: auto;
 }
@@ -41,7 +63,7 @@ p {
 }
 
 section:not(#shadow-host-companion) {
-  padding: 60px 64px 0 64px;
+  padding: 50px 64px 0 64px;
 }
 
 /* fira-sans-100 - latin */
@@ -119,18 +141,20 @@ section:not(#shadow-host-companion) {
 
 @media (max-width: 1024px) {
   section:not(#shadow-host-companion) {
-    padding: 60px 32px 0 32px;
+    padding: 50px 32px 0 32px;
   }
 }
 
 @media (max-width: 768px) {
   section:not(#shadow-host-companion) {
-    padding: 60px 16px 0 16px;
+    padding: 50px 16px 0 16px;
   }
 }
 
 @media (max-width: 500px) {
   section:not(#shadow-host-companion) {
-    padding: 60px 8px 0 8px;
+    padding: 50px 8px 0 8px;
   }
 }
+
+

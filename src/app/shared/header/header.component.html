@@ -5,11 +5,11 @@
         <span [class.picked]="selectedLanguage === 'EN'">EN</span>
         <span [class.picked]="selectedLanguage === 'DE'">DE</span>
       </button>
-      <a href="">About me</a>
-      <a href="">Skills</a>
-      <a href="">Projects</a>
+      <a href="#aboutme">{{'header.aboutme' | translate}}</a>
+      <a href="#skills">{{'header.skills' | translate}}</a>
+      <a href="#portfolio">{{'header.projects' | translate}}</a>
     </div>
-    <div class="logo">
+    <div routerLink="" class="logo">
       <div class="initials">
         <div class="m">M</div>
         <div class="l">L</div>
@@ -24,30 +24,30 @@
         <span></span>
       </div>
       <div class="background-menu" [ngClass]="status ? 'active' : ''"></div>
-      <ul class="nav-mobile" [ngClass]="status ? 'active' : ''">
+      <ul class="nav-mobile" [ngClass]="status ? 'active' : ''" (click)="$event.stopPropagation();">
         <a
           href="#portfolio"
           class="hover-underline-animation"
-          (click)="clickEventLogo()"
-          >Projects</a
+          (click)="clickEventLogo();"
+          >{{'burgermenu.projects' | translate}}</a
         >
         <a
           href="#skills"
           class="hover-underline-animation"
-          (click)="clickEventLogo()"
-          >Skills</a
+          (click)="clickEventLogo();"
+          >{{'burgermenu.skills' | translate}}</a
         >
 
         <a
-          href="#about-me"
+          href="#aboutme"
           class="hover-underline-animation"
-          (click)="clickEventLogo()"
-          >About me</a
+          (click)="clickEventLogo();"
+          >{{'burgermenu.aboutme' | translate}}</a
         >
 
         <button class="translation" (click)="toggleLanguage()">
-          <span class="picked">EN</span>
-          <span>DE</span>
+          <span [class.picked]="selectedLanguage === 'EN'">EN</span>
+          <span [class.picked]="selectedLanguage === 'DE'">DE</span>
         </button>
       </ul>
     </div>

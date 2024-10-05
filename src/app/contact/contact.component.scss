@@ -161,7 +161,6 @@ section {
   }
 }
 
-
 small {
   color: red;
   font-size: 12px;
@@ -230,7 +229,7 @@ small.ng-visible {
     color: white;
     background: transparent;
     cursor: pointer;
-    padding: 12px 24px;
+    padding: 8px 16px;
     width: 140px;
   }
 
@@ -267,6 +266,11 @@ small {
   img {
     rotate: 180deg;
     animation: moveDownUp 2s ease-in-out infinite;
+  }
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    border-color: #ffffff;
   }
 }
 
@@ -310,6 +314,11 @@ small {
   }
   .error-message {
     height: auto; /* Automatische Höhe auf kleineren Bildschirmen */
+  }
+  .bottom-side {
+    button {
+      padding: 16px 8px;
+    }
   }
 }
 

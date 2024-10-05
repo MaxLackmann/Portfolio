@@ -1,23 +1,30 @@
-<section>
+<section id="welcomearea">
   <div class="welcome-area">
     <div class="left-lateral">
-      <div class="scroll-down">
+      <a href="#contact" class="scroll-down">
         <img src="./assets/scroll-down-arrow.svg" alt="" />
-      </div>
+      </a>
       <div class="seperator"></div>
     </div>
     <div class="main-content">
-      <h2>Frontend Developer</h2>
-      <h1>Maximilian <br> Lackmann</h1>
+      <h2>{{ "welcome-area.span1" | translate }}</h2>
+      <h1>
+        Maximilian <br />
+        Lackmann
+      </h1>
       <div class="btn-container">
-        <button class="btn"><span class="text">Check my work</span></button>
-        <button class="btn"><span class="text">Contact me</span></button>
+        <a href="#portfolio" class="btn"
+          ><span class="text">{{ "welcome-area.button1" | translate }}</span></a
+        >
+        <a href="#contact" class="btn"
+          ><span class="text">{{ "welcome-area.button2" | translate }}</span></a
+        >
       </div>
     </div>
     <div class="right-lateral">
       <div class="socials">
         <a href="mailto: lackmann_max@hotmail.com">
-          <img src="./assets/mail.svg" alt="">
+          <img src="./assets/mail.svg" alt="" />
         </a>
         <a href="">
           <img src="./assets/github.svg" alt="" />
@@ -34,10 +41,12 @@
           <ng-container *ngFor="let item of getItemsWithEmail()">
             <span class="dot">•</span>
             <ng-container *ngIf="item.isLink; else normalText">
-              <a [href]="'mailto:' + item.content">{{ item.content }}</a>
+              <a class="mail-link" [href]="'mailto:' + item.content">{{
+                item.content
+              }}</a>
             </ng-container>
             <ng-template #normalText>
-              <span>{{ item.content }}</span>
+              <span>{{ item.content | translate }}</span>
             </ng-template>
           </ng-container>
         </ng-container>

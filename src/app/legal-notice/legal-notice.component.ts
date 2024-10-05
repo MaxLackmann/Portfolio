@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { BackgroundAnimationComponent } from '../background-animation/background-animation.component';
-import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-privacy-policy',
+  selector: 'app-legal-notice',
   standalone: true,
-  imports: [BackgroundAnimationComponent, TranslateModule, RouterLink],
-  templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  imports: [BackgroundAnimationComponent, TranslateModule],
+  templateUrl: './legal-notice.component.html',
+  styleUrl: './legal-notice.component.scss'
 })
-export class PrivacyPolicyComponent {
+export class LegalNoticeComponent {
   constructor(public translateService: TranslateService) {}
 }

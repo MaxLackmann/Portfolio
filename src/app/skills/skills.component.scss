@@ -12,6 +12,7 @@ section {
   max-width: 1440px;
   width: 100%;
   gap: 24px;
+  position: relative;
 }
 
 .skills-content {
@@ -32,7 +33,6 @@ section {
 .skill-set-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 16px;
   border: 1px solid #5cd1b9;
   border-radius: 32px;
@@ -74,12 +74,16 @@ section {
   }
 }
 
+.btn-container {
+  display: flex;
+}
+
 .btn {
   position: relative;
   display: inline-block;
   overflow: hidden;
   width: 120px;
-  padding: 10px;
+  padding: 8px 16px;
   margin-top: 16px;
   background-color: transparent;
   border: 1px solid #ffffff;
@@ -188,5 +192,16 @@ section {
 }
 
 @media (max-width: 768px) {
-  
+  .btn {
+    padding: 16px 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn-container {
+    justify-content: center;
+  }
+  .btn {
+    width: 180px;
+  }
 }

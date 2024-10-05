@@ -1,7 +1,7 @@
 <section>
   <div class="references">
     <div class="head">
-      <p>What my colleagues say about me</p>
+      <p>{{'references.title' | translate }}</p>
     </div>
     <div class="slider-container">
       <div class="card-container">
@@ -11,7 +11,7 @@
           [class.active]="i === 1"
         >
           <div class="carousel-container">
-            <p class="title">{{ comment.description }}</p>
+            <p class="title">{{ comment.description | translate}}</p>
             <div class="author">
               <div class="seperator"></div>
               <p>{{ comment.name }}</p>
