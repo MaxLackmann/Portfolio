@@ -251,6 +251,41 @@ small {
   margin-top: 4px; /* Abstand zwischen Eingabefeld und Fehlermeldung */
 }
 
+.success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3dcfb6;
+  margin-top: 16px;
+  animation: pulse 5s ease-in-out forwards; /* Animation für pulsierenden Effekt */
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0; /* Start ist unsichtbar */
+    text-shadow: none;
+  }
+  25% {
+    opacity: 1; /* Text wird sichtbar */
+    text-shadow: 0 0 6px rgba(61, 207, 183, 1),
+      /* Heller */ 0 0 18px rgba(61, 207, 183, 0.8),
+      0 0 24px rgba(61, 207, 183, 0.5);
+  }
+  50% {
+    text-shadow: none;
+  }
+  75% {
+    opacity: 1; /* Text wird sichtbar */
+    text-shadow: 0 0 3px rgba(61, 207, 183, 1),
+      /* Heller und schmaler */ 0 0 12px rgba(61, 207, 183, 0.8),
+      0 0 16px rgba(61, 207, 183, 0.3);
+  }
+  100% {
+    opacity: 0; /* Text wird unsichtbar */
+    text-shadow: none;
+  }
+}
+
 .scroll-up {
   position: absolute;
   bottom: 0;

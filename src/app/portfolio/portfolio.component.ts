@@ -31,7 +31,7 @@ export class PortfolioComponent {
     {
       projectName: 'Join',
       skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
-      projectImage: ['./assets/join.svg'],
+      projectImage: ['./assets/join.jpg'],
       skillImages: [], // Initial leer
       githublink: 'https://github.com/MarcoAngermann/join-project',
       livetestlink: 'http://join.maximilian-lackmann.com/index.html',
@@ -40,7 +40,7 @@ export class PortfolioComponent {
     {
       projectName: 'El Pollo Loco',
       skills: ['HTML', 'CSS', 'JavaScript'],
-      projectImage: ['./assets/elpolloloco.svg'],
+      projectImage: ['./assets/elpolloloco.jpg'],
       skillImages: [], // Initial leer
       githublink: 'https://github.com/MaxLackmann/el-pollo-loco',
       livetestlink: 'http://el-pollo-loco.maximilian-lackmann.com/index.html',
@@ -49,7 +49,7 @@ export class PortfolioComponent {
     {
       projectName: 'DaBubble',
       skills: ['Angular', 'Firebase', 'TypeScript'],
-      projectImage: ['./assets/dabubble.svg'],
+      projectImage: ['./assets/dabubble.jpg'],
       skillImages: [], // Initial leer
       githublink: '',
       livetestlink: '',

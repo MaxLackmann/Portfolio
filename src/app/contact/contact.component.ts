@@ -13,7 +13,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -28,26 +28,13 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     TranslateModule,
   ],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrls: ['./contact.component.scss'], // Korrigiere den key von 'styleUrl' zu 'styleUrls'
 })
 export class ContactComponent {
   isMobileView: boolean = false;
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.checkWindowWidth();
-  }
-
-  ngOnInit() {
-    this.checkWindowWidth();
-  }
-
-  checkWindowWidth() {
-    this.isMobileView = window.innerWidth <= 1024 ? true : false;
-  }
-
   contactForm: FormGroup;
   messageSent: boolean = false;
+  successAnimation: boolean = false; // Variable für die Animation
   errorMessage: string = '';
 
   constructor(
@@ -63,6 +50,19 @@ export class ContactComponent {
     });
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkWindowWidth();
+  }
+
+  ngOnInit() {
+    this.checkWindowWidth();
+  }
+
+  checkWindowWidth() {
+    this.isMobileView = window.innerWidth <= 1024;
+  }
+
   wordCountValidator(minWords: number) {
     return (control: AbstractControl) => {
       const value = control.value || '';
@@ -75,22 +75,27 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       this.http
-        .post('lackmann_max@hotmail.de/contact.php', this.contactForm.value, {
+        .post('https://maximilian-lackmann.com/sendMail.php', this.contactForm.value, {
           headers,
         })
         .subscribe({
           next: () => {
             this.messageSent = true;
+            this.successAnimation = true; // Animation aktivieren
             this.contactForm.reset();
+
+            // Animation für 5 Sekunden aktiv lassen
+            setTimeout(() => {
+              this.successAnimation = false; // Klasse entfernen nach 5 Sekunden
+              this.messageSent = false; // Nachricht zurücksetzen
+            }, 5000);
           },
           error: () => {
-            this.errorMessage =
-              'Error sending the message. Please try again later.';
+            this.errorMessage = 'contact-form.errormessage';
           },
         });
     } else {
-      this.errorMessage =
-        'Please fill out all fields correctly and ensure the message has at least 10 words.';
+      this.errorMessage = 'contact-form.errormessage2';
     }
   }
 }

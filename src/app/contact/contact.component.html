@@ -135,9 +135,10 @@
           </div>
         </form>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <!-- Erfolgsmeldung mit Animation -->
         <div *ngIf="messageSent" class="success-message">
           {{ "contact-form.sendmessage" | translate }}
-        </div>
+      </div>
       </div>
     </div>
     <a *ngIf="!isMobileView" class="scroll-up" href="#welcomearea">

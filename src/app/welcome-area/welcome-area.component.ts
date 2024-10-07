@@ -17,7 +17,7 @@ export class WelcomeAreaComponent {
     { content: 'welcome-area.span3' },
     { content: 'welcome-area.span4' },
   ];
-  emailItem = { content: 'lackmann_max@hotmail.com', isLink: true };
+  emailItem = { content: 'info@maximilian-lackmann.com', isLink: true };
 
   constructor(public translateService: TranslateService) {}
 

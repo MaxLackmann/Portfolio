@@ -82,7 +82,9 @@
     "checkbox1-1": "privacy policy",
     "checkbox1-2": "and agree to the processing of my data as outlined.",
     "button": "Say Hallo ;)",
-    "sendmessage": "Message sent successfully!"
+    "sendmessage": "Message sent successfully!",
+    "errormessage": "Error sending the message. Please try again.",
+    "errormessage2": "Please fill out all fields correctly and ensure the message has at least 10 words."
   },
   "footer": {
     "webdeveloper": "Web Developer",

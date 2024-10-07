@@ -77,7 +77,10 @@
     "checkbox1-1": "Datenschutzrichtlinien",
     "checkbox1-2": "gelesen und stimme der Verarbeitung meiner Daten zu, wie sie dargelegt ist.",
     "button": "Sag Hallo ;)",
-    "sendmessage": "Nachricht erfolgreich gesendet!"
+    "sendmessage": "Nachricht erfolgreich gesendet!",
+    "errormessage": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
+    "errormessage2": "Bitte füllen Sie alle Felder korrekt aus und achten Sie darauf, dass die Nachricht mindestens 10 Wörter enthält."
+
   },
   "footer": {
     "webdeveloper": "Webentwickler",
