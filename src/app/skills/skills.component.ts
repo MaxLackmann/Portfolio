@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
   imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent {
   items = [
@@ -22,9 +24,20 @@ export class SkillsComponent {
     { imgSrc: './assets/git.svg', text: 'GIT' },
     { imgSrc: './assets/api.svg', text: 'Rest-Api' },
     { imgSrc: './assets/scrum.svg', text: 'Scrum' },
-    { imgSrc: './assets/growthmindset.svg', text: 'Growth mindset' },
+    {
+      imgSrc: './assets/growthmindset.svg',
+      text: 'Growth mindset',
+      tooltip: 'skills.growth-mindset',
+    }, // Tooltip hinzugefügt
   ];
 
   constructor(public translateService: TranslateService) {}
 
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 500,
+      offset: 0,
+      easing: 'ease-in-out',
+    });
+  }
 }

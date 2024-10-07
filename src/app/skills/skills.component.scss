@@ -82,7 +82,7 @@ section {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  width: 120px;
+  width: 160px;
   padding: 8px 16px;
   margin-top: 16px;
   background-color: transparent;
@@ -125,12 +125,12 @@ section {
   }
 
   30% {
-    transform: translateX(-120%);
+    transform: translateX(-150%);
     opacity: 0;
   }
 
   70% {
-    transform: translateX(100%);
+    transform: translateX(130%);
     opacity: 0;
   }
 
@@ -162,6 +162,8 @@ section {
   }
 }
 
+
+
 .skillbox {
   width: 70px;
   display: flex;
@@ -169,12 +171,78 @@ section {
   word-break: normal;
   align-items: center;
   gap: 8px;
+  position: relative;
+
+  /* Hover Effekt für Skillbox */
+  &:hover .tooltip {
+    visibility: visible; /* Sichtbar bei Hover */
+    opacity: 1; /* Voll sichtbar */
+  }
+
+  /* Animations-Klasse für das Bild im Tooltip */
+  &:hover img.animate-img {
+    animation: image-hover 0.5s linear;
+  }
+}
+
+/* Animation für Skillbox */
+@keyframes image-hover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.tooltip {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  visibility: hidden; /* Standardmäßig unsichtbar */
+  background-color: white;
+  color: #3dcfb6;
+  text-align: center;
+  border-radius: 20px;
+  padding: 16px;
+  position: absolute;
+  bottom: 115%; /* Tooltip über dem Element */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+  opacity: 0; /* Unsichtbar */
+  z-index: 10; /* Über anderen Elementen */
+
+  img {
+    animation: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Positioniere die Spitze direkt unter dem Tooltip */
+    left: 50%;
+    margin-left: -8px; /* Mitte der Spitze */
+    border-width: 8px; /* Höhe der Spitze */
+    border-style: solid;
+    border-color: white transparent transparent transparent; /* Farbverlauf für die Spitze */
+  }
+}
+
+.future-skills {
+  display: flex;
+  gap: 16px;
 }
 
 @media (max-width: 1024px) {
   .skills-content {
     flex-direction: column;
-    gap: 50px ;
+    gap: 50px;
 
     .left-side {
       width: 100%;

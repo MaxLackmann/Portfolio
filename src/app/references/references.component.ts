@@ -132,4 +132,5 @@ export class ReferencesComponent {
       this.dotAnimationState.fill(false);
     }, 500);
   }
+
 }

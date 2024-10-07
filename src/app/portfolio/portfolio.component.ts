@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-portfolio',
@@ -31,8 +33,8 @@ export class PortfolioComponent {
       skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
       projectImage: ['./assets/join.svg'],
       skillImages: [], // Initial leer
-      githublink: '',
-      livetestlink: '',
+      githublink: 'https://github.com/MarcoAngermann/join-project',
+      livetestlink: 'http://join.maximilian-lackmann.com/index.html',
       description: 'portfolio-modal.description1',
     },
     {
@@ -40,8 +42,8 @@ export class PortfolioComponent {
       skills: ['HTML', 'CSS', 'JavaScript'],
       projectImage: ['./assets/elpolloloco.svg'],
       skillImages: [], // Initial leer
-      githublink: '',
-      livetestlink: '',
+      githublink: 'https://github.com/MaxLackmann/el-pollo-loco',
+      livetestlink: 'http://el-pollo-loco.maximilian-lackmann.com/index.html',
       description: 'portfolio-modal.description2',
     },
     {
@@ -55,14 +57,12 @@ export class PortfolioComponent {
     },
   ];
 
-  // Funktion um das aktuell schwebende Projekt zu setzen
-  setHoveredProject(index: number) {
+  setHoveredProject(index: number): void {
     this.hoveredProject = index;
   }
 
-  // Funktion um das Hover zu entfernen
-  clearHoveredProject() {
-    this.hoveredProject = null;
+  clearHoveredProject(): void {
+    this.hoveredProject = null; // Setze den Hover-Status zurück
   }
 
   // Funktion zum Öffnen des Modals mit den Projektinformationen
@@ -70,12 +70,16 @@ export class PortfolioComponent {
     this.selectedProject = { ...project, index: index };
     this.addSkillImages(this.selectedProject);
     this.showModal = true;
+
+    document.body.style.overflow = 'hidden';
   }
 
   // Funktion zum Schließen des Modals
   closeModal() {
     this.showModal = false;
     this.selectedProject = null;
+
+    document.body.style.overflow = 'auto';
   }
 
   // Funktion um das nächste Projekt anzuzeigen
@@ -105,5 +109,13 @@ export class PortfolioComponent {
     if (target.classList.contains('modal')) {
       this.closeModal();
     }
+  }
+
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 500,
+      offset: 0,
+      easing: 'ease-in-out',
+    });
   }
 }

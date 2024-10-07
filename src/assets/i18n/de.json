@@ -24,10 +24,11 @@
     "title": "Technologien",
     "skillset": "Fähigkeiten",
     "skillsettext": "Als aufstrebender Frontend-Entwickler bin ich leidenschaftlich an modernem Webdesign und der Schaffung innovativer Benutzererlebnisse interessiert. Mit jeder neuen Herausforderung wachse ich und verbessere kontinuierlich meine Fähigkeiten, um elegante, effiziente und benutzerfreundliche Lösungen zu entwickeln. Mein Ziel ist es, Designs zu entwickeln, die nicht nur funktional, sondern auch visuell ansprechend sind.",
-    "title2": "Brauchen Sie eine andere Fähigkeit?",
+    "title2": "Brauchen Sie eine",
+    "title2-1": "andere Fähigkeit?",
     "text": "Fühlen Sie sich frei, mich zu kontaktieren. Ich bin offen für neue und spannende Projekte.",
     "button": "Lass uns reden",
-    "mindset": "Ich habe ein besonderes Interesse am Lernen"
+    "growth-mindset": "Ich habe ein besonderes Interesse am Lernen von"
   },
   "portfolio": {
     "featured-projects": "Ausgewählte Projekte",

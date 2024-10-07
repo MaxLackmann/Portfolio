@@ -18,7 +18,7 @@ export class AboutmeComponent {
 
   ngAfterViewInit(): void {
     AOS.init({
-      duration: 1000,
+      duration: 500,
       offset: 0,
       easing: 'ease-in-out',
     });

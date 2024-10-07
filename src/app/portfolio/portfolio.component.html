@@ -1,5 +1,5 @@
 <section id="portfolio">
-  <div  class="portfolio">
+  <div class="portfolio" data-aos="fade-up-right">
     <div class="head">
       <span>Portfolio</span>
       <h1>{{ "portfolio.featured-projects" | translate }}</h1>
@@ -29,8 +29,10 @@
             </span>
           </div>
           <div
-            class="image-test"
-            [ngClass]="{ 'active-image': hoveredProject === i }"
+            class="project-image"
+            [ngClass]="{
+              'active-image': hoveredProject === i,
+            }"
           >
             <img [src]="project.projectImage" alt="" />
             <div class="background-stripes"></div>
@@ -38,8 +40,16 @@
         </div>
       </div>
     </div>
-    <div class="modal" *ngIf="showModal" (click)="closeModalOnClickOutside($event)">
-      <div class="modal-content" (click)="$event.stopPropagation()">
+    <div
+      class="modal"
+      *ngIf="showModal"
+      (click)="closeModalOnClickOutside($event)"
+    >
+      <div
+        class="modal-content"
+        (click)="$event.stopPropagation()"
+        data-aos="zoom-in"
+      >
         <div class="close-container" (click)="closeModal()">
           <img
             class="closer"
@@ -55,7 +65,7 @@
               <h2>{{ selectedProject?.projectName }}</h2>
             </div>
             <div class="information">
-              <h3>{{ "portfolio-modal.modaltitle" | translate}}</h3>
+              <h3>{{ "portfolio-modal.modaltitle" | translate }}</h3>
               <p>{{ selectedProject?.description | translate }}</p>
 
               <!-- Skills und Bilder -->
@@ -91,10 +101,10 @@
             <button class="btn">
               <a
                 [href]="
-                  selectedProject?.githublink ||
-                  'https://github.com/MaxLackmann'
+                  selectedProject?.githublink
                 "
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -107,10 +117,10 @@
             <button class="btn">
               <a
                 [href]="
-                  selectedProject?.livetestlink ||
-                  'https://github.com/MaxLackmann'
+                  selectedProject?.livetestlink
                 "
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Live Test
               </a>

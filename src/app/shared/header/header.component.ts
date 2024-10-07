@@ -18,9 +18,16 @@ export class HeaderComponent {
 
   clickEvent() {
     this.status = !this.status;
+    if (this.status) {
+      document.body.style.overflow = 'hidden'; // Bei Öffnung des Menüs
+    } else {
+      document.body.style.overflow = 'auto'; // Bei Schließen des Menüs
+    }
   }
   clickEventLogo() {
     this.status = false;
+    document.body.style.overflow = 'auto'; // Bei Schließen des Menüs
+
   }
 
   toggleLanguage() {

@@ -1,6 +1,6 @@
 <section id="contact">
   <div class="contact">
-    <div class="left-side">
+    <div class="left-side" data-aos="fade-up-right">
       <div class="information-title">
         <h3>{{ "contact.contact" | translate }}</h3>
         <h1>
@@ -19,7 +19,7 @@
         </p>
       </div>
     </div>
-    <div class="right-side">
+    <div class="right-side" data-aos="fade-up-left">
       <div class="top-side">
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
           <!-- Name Input -->

@@ -18,24 +18,29 @@ section {
 .left-side {
   width: 45%;
   height: 100%;
-  min-height: 450px;
-  border: 1px solid #3dcfb6;
-  border-radius: 20px;
+  min-height: 600px;
 
   position: relative;
-  img {
-    height: 100%;
-    width: 100%;
-    border-radius: 20px;
-    position: absolute;
-    object-fit: cover;
-    z-index: 2;
-  }
 
   &:hover .background-stripes {
     visibility: visible;
     opacity: 1;
   }
+}
+
+.background-image {
+  background-image: url("../../assets/me.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border: 1px solid #3dcfb6;
+  border-radius: 20px;
 }
 
 .background-stripes {
@@ -124,4 +129,3 @@ section {
     }
   }
 }
-

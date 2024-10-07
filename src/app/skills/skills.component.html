@@ -2,7 +2,7 @@
   <div class="skills">
     <h3>{{ "skills.title" | translate }}</h3>
     <div class="skills-content">
-      <div class="left-side">
+      <div class="left-side" data-aos="fade-up-right">
         <div class="skill-set-container">
           <h1>{{ "skills.skillset" | translate }}</h1>
           <div class="text">
@@ -27,11 +27,18 @@
         </div>
       </div>
 
-      <div class="right-side">
+      <div class="right-side" data-aos="fade-up-left">
         <div class="skill-set">
           <div class="skillbox" *ngFor="let item of items">
-            <img [src]="item.imgSrc" alt="" />
+            <img class="animate-img" [src]="item.imgSrc" alt="" />
             <span>{{ item.text }}</span>
+            <div *ngIf="item.tooltip" class="tooltip">
+              {{ item.tooltip | translate }} <!-- Tooltip-Text von JSON -->
+              <div class="future-skills">
+                <img src="./assets/php.png" alt="">
+                <img src="./assets/react.png" alt="">
+              </div>
+            </div>
           </div>
         </div>
       </div>
