@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ScrollService } from '../scroll-service.service';
+
 
 @Component({
   selector: 'app-skills',
@@ -31,13 +33,16 @@ export class SkillsComponent {
     }, // Tooltip hinzugefügt
   ];
 
-  constructor(public translateService: TranslateService) {}
+  constructor(public translateService: TranslateService, private scrollService: ScrollService) {}
 
   ngAfterViewInit(): void {
+    this.scrollService.initSmoothScroll();
     AOS.init({
       duration: 500,
       offset: 0,
       easing: 'ease-in-out',
     });
   }
+
+  
 }

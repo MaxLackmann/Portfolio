@@ -22,7 +22,6 @@
     <div class="right-side" data-aos="fade-up-left">
       <div class="top-side">
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
-          <!-- Name Input -->
           <div class="input">
             <span>{{ "contact-form.name" | translate }}</span>
             <input
@@ -44,8 +43,6 @@
               >{{ "contact-form.small1" | translate }}</small
             >
           </div>
-
-          <!-- Email Input -->
           <div class="input">
             <span>{{ "contact-form.email" | translate }}</span>
             <input
@@ -72,8 +69,6 @@
               }}
             </small>
           </div>
-
-          <!-- Message Input -->
           <div class="input">
             <span>{{ "contact-form.message" | translate }}</span>
             <textarea
@@ -100,9 +95,7 @@
               }}
             </small>
           </div>
-
           <div class="bottom-side">
-            <!-- Checkbox -->
             <div class="send-contact">
               <input
                 type="checkbox"
@@ -118,8 +111,6 @@
                 {{ "contact-form.checkbox1-2" | translate }}
               </label>
             </div>
-
-            <!-- Submit Button -->
             <div class="btn-container">
               <button type="submit" [disabled]="!contactForm.valid">
                 {{ "contact-form.button" | translate }}
@@ -135,10 +126,9 @@
           </div>
         </form>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-        <!-- Erfolgsmeldung mit Animation -->
         <div *ngIf="messageSent" class="success-message">
           {{ "contact-form.sendmessage" | translate }}
-      </div>
+        </div>
       </div>
     </div>
     <a *ngIf="!isMobileView" class="scroll-up" href="#welcomearea">

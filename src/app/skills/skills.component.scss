@@ -237,7 +237,7 @@ section {
 
 .future-skills {
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 
 @media (max-width: 1024px) {
@@ -267,6 +267,12 @@ section {
 }
 
 @media (max-width: 500px) {
+  .skill-set-container {
+    padding: 16px;
+    h1 {
+      font-size: 50px;
+    }
+  }
   .btn-container {
     justify-content: center;
   }

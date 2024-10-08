@@ -13,7 +13,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -28,13 +28,13 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     TranslateModule,
   ],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'], // Korrigiere den key von 'styleUrl' zu 'styleUrls'
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   isMobileView: boolean = false;
   contactForm: FormGroup;
   messageSent: boolean = false;
-  successAnimation: boolean = false; // Variable für die Animation
+  successAnimation: boolean = false;
   errorMessage: string = '';
 
   constructor(
@@ -75,19 +75,22 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       this.http
-        .post('https://maximilian-lackmann.com/sendMail.php', this.contactForm.value, {
-          headers,
-        })
+        .post(
+          'https://maximilian-lackmann.com/sendMail.php',
+          this.contactForm.value,
+          {
+            headers,
+          }
+        )
         .subscribe({
           next: () => {
             this.messageSent = true;
-            this.successAnimation = true; // Animation aktivieren
+            this.successAnimation = true;
             this.contactForm.reset();
 
-            // Animation für 5 Sekunden aktiv lassen
             setTimeout(() => {
-              this.successAnimation = false; // Klasse entfernen nach 5 Sekunden
-              this.messageSent = false; // Nachricht zurücksetzen
+              this.successAnimation = false;
+              this.messageSent = false;
             }, 5000);
           },
           error: () => {

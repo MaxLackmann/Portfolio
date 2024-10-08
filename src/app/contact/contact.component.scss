@@ -88,10 +88,10 @@ section {
     outline: none;
     resize: none;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(61, 207, 182, 0); // Anfangs unsichtbar
+    border-bottom: 1px solid rgba(61, 207, 182, 0);
     &:hover {
       transition: all 0.3s ease-in-out;
-      border-bottom-color: rgba(61, 207, 182, 0.4); // Beim Hover sichtbar
+      border-bottom-color: rgba(61, 207, 182, 0.4);
     }
   }
 
@@ -99,7 +99,7 @@ section {
   textarea:focus {
     outline: none;
     transition: all 0.3s ease-in-out;
-    border-bottom: 1px solid rgba(61, 207, 182, 1); // Beim Fokussieren sichtbar
+    border-bottom: 1px solid rgba(61, 207, 182, 1);
   }
 }
 
@@ -118,9 +118,9 @@ section {
 
 .checkbox {
   cursor: pointer;
-  appearance: none; /* Entfernt das Standard-Checkbox-Styling */
-  width: 16px; /* Feste Breite */
-  height: 16px; /* Feste Höhe */
+  appearance: none;
+  width: 16px;
+  height: 16px;
   border: 2px solid #3dcfb6;
   flex-shrink: 0;
   flex-grow: 0;
@@ -151,12 +151,12 @@ section {
   }
 
   &:active {
-    background-color: #3dcfb6; /* Hintergrundfarbe bei Klick */
-    transform: scale(0.95); /* Verkleinert die Checkbox leicht beim Klicken */
+    background-color: #3dcfb6;
+    transform: scale(0.95);
   }
 
   &:checked {
-    background-color: #3dcfb6; /* Hintergrundfarbe im Checked-Zustand */
+    background-color: #3dcfb6;
     box-shadow: 0px 0px 6px 3px rgba(61, 207, 183, 1);
   }
 }
@@ -165,12 +165,12 @@ small {
   color: red;
   font-size: 12px;
   margin-top: 4px;
-  min-height: 16px; /* Reserve space for the validation messages */
-  visibility: hidden; /* Hide the element but keep its space */
+  min-height: 16px;
+  visibility: hidden;
 }
 
 small.ng-visible {
-  visibility: visible; /* Show the element when it has an error */
+  visibility: visible;
 }
 
 .error-message {
@@ -178,19 +178,18 @@ small.ng-visible {
   font-size: 12px;
   height: 20px;
   margin-top: 4px;
-  visibility: hidden; /* Standardmäßig unsichtbar */
+  visibility: hidden;
 }
 
 .error-message.ng-visible {
-  visibility: visible; /* Nur anzeigen, wenn der Fehler sichtbar ist */
+  visibility: visible;
 }
 
 .input input.ng-invalid.ng-touched,
 .input textarea.ng-invalid.ng-touched {
-  border-bottom-color: red; /* Rote Unterstreichung bei Fehler */
+  border-bottom-color: red;
 }
 
-/* Keyframes für die Animation */
 @keyframes fly-around {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
@@ -234,21 +233,21 @@ small.ng-visible {
   }
 
   button:disabled {
-    background-color: #555; /* Darker color when disabled */
-    color: #ccc; /* Light color for text */
-    cursor: not-allowed; /* Change cursor to indicate it's not clickable */
-    opacity: 0.5; /* Slightly transparent */
+    background-color: #555;
+    color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 }
 
 .invalid {
-  border: 1px solid red; /* Rote Umrandung für ungültige Felder */
+  border: 1px solid red;
 }
 
 small {
-  color: red; /* Rote Farbe für Fehlermeldungen */
-  font-size: 12px; /* Kleinere Schriftgröße für Fehlermeldungen */
-  margin-top: 4px; /* Abstand zwischen Eingabefeld und Fehlermeldung */
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
 }
 
 .success-message {
@@ -257,31 +256,29 @@ small {
   align-items: center;
   color: #3dcfb6;
   margin-top: 16px;
-  animation: pulse 5s ease-in-out forwards; /* Animation für pulsierenden Effekt */
+  animation: pulse 5s ease-in-out forwards;
 }
 
 @keyframes pulse {
   0% {
-    opacity: 0; /* Start ist unsichtbar */
+    opacity: 0;
     text-shadow: none;
   }
   25% {
-    opacity: 1; /* Text wird sichtbar */
-    text-shadow: 0 0 6px rgba(61, 207, 183, 1),
-      /* Heller */ 0 0 18px rgba(61, 207, 183, 0.8),
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(61, 207, 183, 1), 0 0 18px rgba(61, 207, 183, 0.8),
       0 0 24px rgba(61, 207, 183, 0.5);
   }
   50% {
     text-shadow: none;
   }
   75% {
-    opacity: 1; /* Text wird sichtbar */
-    text-shadow: 0 0 3px rgba(61, 207, 183, 1),
-      /* Heller und schmaler */ 0 0 12px rgba(61, 207, 183, 0.8),
+    opacity: 1;
+    text-shadow: 0 0 3px rgba(61, 207, 183, 1), 0 0 12px rgba(61, 207, 183, 0.8),
       0 0 16px rgba(61, 207, 183, 0.3);
   }
   100% {
-    opacity: 0; /* Text wird unsichtbar */
+    opacity: 0;
     text-shadow: none;
   }
 }
@@ -348,7 +345,7 @@ small {
     bottom: 0;
   }
   .error-message {
-    height: auto; /* Automatische Höhe auf kleineren Bildschirmen */
+    height: auto;
   }
   .bottom-side {
     button {
@@ -358,4 +355,9 @@ small {
 }
 
 @media (max-width: 500px) {
+  .information-title {
+    h1 {
+      font-size: 50px;
+    }
+  }
 }

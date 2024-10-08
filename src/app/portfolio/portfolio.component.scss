@@ -31,7 +31,6 @@ section {
 
   h1 {
     color: #3dcfb6;
-    font-size: 64px;
     font-weight: bold;
   }
 
@@ -107,8 +106,8 @@ section {
   z-index: 2;
 
   img {
-    position: relative; /* Standardmäßige Positionierung */
-    z-index: 2; /* Damit das Bild über den Streifen liegt */
+    position: relative;
+    z-index: 2;
     height: auto;
     width: 100%;
     object-fit: cover;
@@ -127,29 +126,29 @@ section {
     transform: translateX(100%);
   }
   30% {
-    transform: translateX(0%); /* Aufprall an der Wand */
+    transform: translateX(0%);
   }
   55% {
-    transform: translateX(12%); /* Mittelgroßer Rückprall */
+    transform: translateX(12%);
   }
   75% {
-    transform: translateX(0%); /* Zurück zur Wand */
+    transform: translateX(0%);
   }
   90% {
-    transform: translateX(3%); /* Kleiner Rückprall */
+    transform: translateX(3%);
   }
   100% {
-    transform: translateX(0%); /* Endpunkt */
+    transform: translateX(0%);
   }
 }
 
 .background-stripes {
   position: absolute;
-  top: 5%; /* Verschiebung nach unten, je nachdem wie stark du die Streifen aus dem Bild haben willst */
-  left: 5%; /* Verschiebung nach rechts */
-  width: 100%; /* Gleiche Breite wie das img */
-  height: 100%; /* Gleiche Höhe wie das img */
-  z-index: 1; /* Hinter das Bild legen */
+  top: 5%;
+  left: 5%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   background: repeating-linear-gradient(
     135deg,
     #3dcfb6 0,
@@ -178,14 +177,14 @@ section {
   padding: 64px;
   border-radius: 20px;
   height: 100%;
-  max-height: 80vh; /* Maximale Höhe */
+  max-height: 80vh;
   width: 85%;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 24px;
   box-shadow: 0px 0px 5px 1px rgb(61, 207, 183);
-  overflow-y: auto; /* Scrollbar für vertikale Richtung */
+  overflow-y: auto;
 }
 
 .close-container {
@@ -282,6 +281,7 @@ section {
   img {
     width: 100%;
     object-fit: cover;
+    border-radius: 30px;
   }
 }
 
@@ -300,7 +300,7 @@ section {
 .btn {
   position: relative;
   display: flex;
-  align-items: center; /* Damit der Text und das Bild zentriert sind */
+  align-items: center;
   overflow: hidden;
   padding: 8px 16px;
   gap: 4px;
@@ -310,7 +310,7 @@ section {
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out; /* Transition auf 0.3s angepasst */
+  transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
@@ -329,18 +329,18 @@ section {
 .diagonal-arrow {
   width: 16px;
   height: 16px;
-  transform: rotate(-45deg); /* Fixiere den Pfeil bei -45 Grad */
+  transform: rotate(-45deg);
 }
 
 @keyframes swing-diagonal {
   0% {
-    transform: translate(0, 0) rotate(-45deg); /* Behalte den Winkel bei */
+    transform: translate(0, 0) rotate(-45deg);
   }
   50% {
-    transform: translate(3px, -3px) rotate(-45deg); /* Bewege nur die Position */
+    transform: translate(3px, -3px) rotate(-45deg);
   }
   100% {
-    transform: translate(0, 0) rotate(-45deg); /* Zurück zur Ausgangsposition */
+    transform: translate(0, 0) rotate(-45deg);
   }
 }
 
@@ -503,5 +503,11 @@ section {
   .project-list {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .head {
+    h1 {
+      font-size: 50px;
+    }
   }
 }

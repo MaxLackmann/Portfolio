@@ -19,21 +19,18 @@ export class HeaderComponent {
   clickEvent() {
     this.status = !this.status;
     if (this.status) {
-      document.body.style.overflow = 'hidden'; // Bei Öffnung des Menüs
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'auto'; // Bei Schließen des Menüs
+      document.body.style.overflow = 'auto';
     }
   }
   clickEventLogo() {
     this.status = false;
-    document.body.style.overflow = 'auto'; // Bei Schließen des Menüs
-
+    document.body.style.overflow = 'auto';
   }
 
   toggleLanguage() {
     this.selectedLanguage = this.selectedLanguage === 'EN' ? 'DE' : 'EN';
-    this.translateService.use(this.selectedLanguage.toLowerCase()); // Sprache auf Kleinbuchstaben setzen
+    this.translateService.use(this.selectedLanguage.toLowerCase());
   }
-
-  
 }

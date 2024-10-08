@@ -176,9 +176,10 @@ header {
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    height: 40px;
+    height: 32px;
     position: relative;
     float: right;
+    cursor: pointer;
   }
 
   .burger {
@@ -264,21 +265,21 @@ header {
 
     a {
       position: relative;
-      text-decoration: none; /* Entfernt die Standard-Unterstreichung */
+      text-decoration: none;
     }
 
     a::after {
-      content: ""; /* Erzeugt das Pseudo-Element */
+      content: "";
       position: absolute;
       left: 50%;
-      bottom: -8px; /* Abstand nach unten unterhalb des Texts */
+      bottom: -8px;
       transform: translateX(-50%);
       opacity: 0;
       width: 8px;
       height: 8px;
-      background-color: #3dcfb6; /* Farbe des Punkts */
-      border-radius: 50%; /* Macht es rund */
-      transition: opacity 0.3s ease-in-out; /* Sanfter Übergang */
+      background-color: #3dcfb6;
+      border-radius: 50%;
+      transition: opacity 0.3s ease-in-out;
     }
 
     a:hover::after {

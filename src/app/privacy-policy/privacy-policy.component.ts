@@ -7,17 +7,24 @@ import { CommonModule, ViewportScroller } from '@angular/common'; // ViewportScr
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [BackgroundAnimationComponent, TranslateModule, RouterLink, CommonModule],
+  imports: [
+    BackgroundAnimationComponent,
+    TranslateModule,
+    RouterLink,
+    CommonModule,
+  ],
   templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  styleUrl: './privacy-policy.component.scss',
 })
 export class PrivacyPolicyComponent {
-  constructor(public translateService: TranslateService, private viewportScroller: ViewportScroller) {
-    this.scrollToTop();  // Scroll nach oben sobald die Seite geladen wird
+  constructor(
+    public translateService: TranslateService,
+    private viewportScroller: ViewportScroller
+  ) {
+    this.scrollToTop();
   }
 
-  // Methode zum Scrollen nach oben
   scrollToTop(): void {
-    this.viewportScroller.scrollToPosition([0, 0]); // Scrollt zur Position [0,0]
+    this.viewportScroller.scrollToPosition([0, 0]);
   }
 }

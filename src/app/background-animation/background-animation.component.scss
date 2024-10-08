@@ -11,7 +11,7 @@
     top: 0;
     left: 0;
     overflow: hidden;
-    pointer-events: none; /* Keine Mausinteraktionen mit dem Hintergrund */
+    pointer-events: none;
 }
 
 .background span {
@@ -35,6 +35,7 @@
     animation-delay: -5s;
     transform-origin: 3vw -22vh;
     box-shadow: 32vmin 0 4.082808802254194vmin currentColor;
+    opacity: 0.9;
 }
 .background span:nth-child(1) {
     color: #257467;
@@ -44,6 +45,7 @@
     animation-delay: -29s;
     transform-origin: 6vw -19vh;
     box-shadow: 32vmin 0 4.904416367510475vmin currentColor;
+    opacity: 0.9;
 }
 .background span:nth-child(2) {
     color: #257467;
@@ -53,6 +55,7 @@
     animation-delay: -39s;
     transform-origin: -24vw -13vh;
     box-shadow: -32vmin 0 4.457385695199555vmin currentColor;
+    opacity: 0.9;
 }
 .background span:nth-child(3) {
     color: #828282;
@@ -62,6 +65,7 @@
     animation-delay: -13s;
     transform-origin: 9vw -3vh;
     box-shadow: 32vmin 0 4.419242582090221vmin currentColor;
+    opacity: 0.9;
 }
 .background span:nth-child(4) {
     color: #828282;
@@ -71,6 +75,7 @@
     animation-delay: -9s;
     transform-origin: 12vw 20vh;
     box-shadow: 32vmin 0 4.103050025117063vmin currentColor;
+    opacity: 0.9;
 }
 .background span:nth-child(5) {
     color: #828282;
@@ -80,6 +85,7 @@
     animation-delay: -30s;
     transform-origin: -22vw 15vh;
     box-shadow: -32vmin 0 4.7751692541333215vmin currentColor;
+    opacity: 0.9;
 }
 .background span:nth-child(6) {
     color: #828282;
@@ -89,6 +95,7 @@
     animation-delay: -39s;
     transform-origin: 0vw 8vh;
     box-shadow: 32vmin 0 4.33420366690263vmin currentColor;
+    opacity: 0.9;
 }
 .background span:nth-child(7) {
     color: #257467;
@@ -98,4 +105,5 @@
     animation-delay: -2s;
     transform-origin: 20vw 20vh;
     box-shadow: 32vmin 0 4.733960120841979vmin currentColor;
+    opacity: 0.9;
 }

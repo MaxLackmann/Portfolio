@@ -8,7 +8,6 @@
         {{ "portfolio.text2" | translate }}
       </p>
     </div>
-
     <div class="projects">
       <div class="projects-container">
         <div
@@ -61,14 +60,11 @@
           <div class="left-side">
             <div class="header">
               <h1>{{ selectedProject?.index + 1 }}</h1>
-              <!-- Hier um 1 erhöhen -->
               <h2>{{ selectedProject?.projectName }}</h2>
             </div>
             <div class="information">
               <h3>{{ "portfolio-modal.modaltitle" | translate }}</h3>
               <p>{{ selectedProject?.description | translate }}</p>
-
-              <!-- Skills und Bilder -->
               <div class="skills">
                 <div
                   *ngFor="let skill of selectedProject?.skills; let i = index"
@@ -95,14 +91,11 @@
             </div>
           </div>
         </div>
-
         <div class="bottom-container">
           <div class="links">
             <button class="btn">
               <a
-                [href]="
-                  selectedProject?.githublink
-                "
+                [href]="selectedProject?.githublink"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -116,9 +109,7 @@
             </button>
             <button class="btn">
               <a
-                [href]="
-                  selectedProject?.livetestlink
-                "
+                [href]="selectedProject?.livetestlink"
                 target="_blank"
                 rel="noopener noreferrer"
               >
