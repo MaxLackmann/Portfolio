@@ -204,7 +204,7 @@ section {
   flex-direction: column;
   gap: 16px;
   visibility: hidden; /* Standardmäßig unsichtbar */
-  background-color: white;
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
   color: #3dcfb6;
   text-align: center;
   border: 1px solid #3dcfb6;
@@ -231,7 +231,7 @@ section {
     margin-left: -8px; /* Mitte der Spitze */
     border-width: 8px; /* Höhe der Spitze */
     border-style: solid;
-    border-color: white transparent transparent transparent; /* Farbverlauf für die Spitze */
+    border-color: #3dcfb6 transparent transparent transparent; /* Farbverlauf für die Spitze */
   }
 }
 

@@ -102,6 +102,7 @@ section {
     }
     p {
       color: white;
+      font-size: 16px;
     }
   }
 }
@@ -138,5 +139,13 @@ section {
     h1 {
       font-size: 50px;
     }
+  }
+
+  .left-side {
+    min-height: 500px;
+  }
+
+  .right-side {
+    margin-top: 0;
   }
 }

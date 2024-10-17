@@ -13,7 +13,7 @@
     "button1": "Check my work",
     "button2": "Contact me",
     "span1": "Frontend Developer",
-    "span2": "based in Erkrath",
+    "span2": "Based in Erkrath",
     "span3": "Open to work",
     "span4": "Available for remote work"
   },
@@ -38,7 +38,7 @@
   "portfolio": {
     "featured-projects": "Featured Projects",
     "text1": "Take a look at some of my projects.",
-    "text2": "Interact with them to see my skills and experience in action"
+    "text2": "Interact with them to see my skills and experience in action."
   },
   "portfolio-modal": {
     "modaltitle": "What is this project about?",
