@@ -1,5 +1,5 @@
 <section id="skills">
-  <div class="skills" >
+  <div class="skills">
     <h3 data-aos="fade-up-right">{{ "skills.title" | translate }}</h3>
     <div class="skills-content">
       <div class="left-side" data-aos="fade-up-right">
@@ -28,15 +28,36 @@
       </div>
 
       <div class="right-side" data-aos="fade-up-left">
+        <div class="skill-toggle-buttons">
+          <button
+            (click)="toggleSkills()"
+            [class.backend-active]="activeCategory === 'backend'"
+            [class.frontend-active]="activeCategory === 'frontend'"
+          >
+            <span class="label" [class.visible]="activeCategory === 'frontend'"
+              >Frontend</span
+            >
+            <span class="label" [class.visible]="activeCategory === 'backend'"
+              >Backend</span
+            >
+          </button>
+        </div>
+
+        <!-- Skill-Grid -->
         <div class="skill-set">
           <div class="skillbox" *ngFor="let item of items">
             <img class="animate-img" [src]="item.imgSrc" alt="" />
             <span>{{ item.text }}</span>
+
+            <!-- Tooltip (optional) -->
             <div *ngIf="item.tooltip" class="tooltip">
-              {{ item.tooltip | translate }} <!-- Tooltip-Text von JSON -->
-              <div class="future-skills">
-                <img src="./assets/php.png" alt="">
-                <img src="./assets/react.png" alt="">
+              {{ item.tooltip | translate }}
+              <div class="tooltip-icons">
+                <img
+                  *ngFor="let icon of item.tooltipIcons"
+                  [src]="icon"
+                  alt=""
+                />
               </div>
             </div>
           </div>

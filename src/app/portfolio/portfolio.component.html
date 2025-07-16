@@ -7,6 +7,20 @@
         {{ "portfolio.text1" | translate }} <br />
         {{ "portfolio.text2" | translate }}
       </p>
+      <div class="skill-toggle-buttons">
+        <button
+          (click)="toggleCategory()"
+          [class.backend-active]="activeCategory === 'backend'"
+          [class.frontend-active]="activeCategory === 'frontend'"
+        >
+          <span class="label" [class.visible]="activeCategory === 'frontend'"
+            >Frontend</span
+          >
+          <span class="label" [class.visible]="activeCategory === 'backend'"
+            >Backend</span
+          >
+        </button>
+      </div>
     </div>
     <div class="projects">
       <div class="projects-container">
@@ -19,7 +33,7 @@
         >
           <div class="project-name">
             <h2>{{ project.projectName }}</h2>
-            <img src="./assets/portfolio-arrow.svg" alt="" />
+            <img src="./assets/img/portfolio-arrow.svg" alt="" />
           </div>
           <div class="project-skills">
             <span *ngFor="let skill of project.skills; let isLast = last">

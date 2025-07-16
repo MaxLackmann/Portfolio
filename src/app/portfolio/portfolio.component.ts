@@ -1,14 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+type Project = {
+  projectName: string;
+  projectImage: string[];
+  skills: string[];
+  skillImages: string[];
+  githublink: string;
+  livetestlink: string;
+  description: string;
+};
+
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, TranslateModule, RouterLink],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'], // Geändert: styleUrl -> styleUrls
 })
@@ -16,22 +25,15 @@ export class PortfolioComponent {
   hoveredProject: number | null = null;
   selectedProject: any = null; // Das ausgewählte Projekt für das Popup
   showModal: boolean = false; // Steuerung, ob das Modal angezeigt wird
+  activeCategory: 'frontend' | 'backend' = 'frontend';
 
   constructor(public translateService: TranslateService) {}
 
-  projects: {
-    projectName: string;
-    projectImage: string[];
-    skills: string[];
-    skillImages: string[];
-    githublink: string;
-    livetestlink: string;
-    description: string;
-  }[] = [
+  FrontendProjects: Project[] = [
     {
       projectName: 'Join',
       skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
-      projectImage: ['./assets/join.jpg'],
+      projectImage: ['./assets/img/join.jpg'],
       skillImages: [], // Initial leer
       githublink: 'https://github.com/MarcoAngermann/join-project',
       livetestlink: 'http://join.maximilian-lackmann.com/index.html',
@@ -40,7 +42,7 @@ export class PortfolioComponent {
     {
       projectName: 'El Pollo Loco',
       skills: ['HTML', 'CSS', 'JavaScript'],
-      projectImage: ['./assets/elpolloloco.jpg'],
+      projectImage: ['./assets/img/elpolloloco.jpg'],
       skillImages: [], // Initial leer
       githublink: 'https://github.com/MaxLackmann/el-pollo-loco',
       livetestlink: 'http://el-pollo-loco.maximilian-lackmann.com/index.html',
@@ -49,10 +51,40 @@ export class PortfolioComponent {
     {
       projectName: 'DaBubble',
       skills: ['Angular', 'Firebase', 'TypeScript'],
-      projectImage: ['./assets/dabubble.jpg'],
+      projectImage: ['./assets/img/dabubble.jpg'],
       skillImages: [], // Initial leer
       githublink: '',
       livetestlink: '',
+      description: 'portfolio-modal.description3',
+    },
+  ];
+
+  Backendprojects: Project[] = [
+    {
+      projectName: 'Join-Django',
+      skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
+      projectImage: ['./assets/img/join.jpg'],
+      skillImages: [], // Initial leer
+      githublink: 'https://github.com/MaxLackmann/new_backend_join',
+      livetestlink: 'http://django-backend.maximilian-lackmann.com/index.html',
+      description: 'portfolio-modal.description1',
+    },
+    {
+      projectName: 'Coderr',
+      skills: ['DRF', 'Django'],
+      projectImage: ['./assets/img/coderr.jpg'],
+      skillImages: [], // Initial leer
+      githublink: 'https://github.com/MaxLackmann/coderr-backend',
+      livetestlink: 'http://coderr.maximilian-lackmann.com/index.html',
+      description: 'portfolio-modal.description2',
+    },
+    {
+      projectName: 'Videoflix',
+      skills: ['Python', 'DRF', 'Django', 'Linux'],
+      projectImage: ['./assets/img/videoflix.jpg'],
+      skillImages: [], // Initial leer
+      githublink: 'https://github.com/MaxLackmann/new-videoflix_backend',
+      livetestlink: 'https://videoflix.maximilian-lackmann.com/index.html',
       description: 'portfolio-modal.description3',
     },
   ];
@@ -63,6 +95,17 @@ export class PortfolioComponent {
 
   clearHoveredProject(): void {
     this.hoveredProject = null; // Setze den Hover-Status zurück
+  }
+
+  get projects() {
+    return this.activeCategory === 'frontend'
+      ? this.FrontendProjects
+      : this.Backendprojects;
+  }
+
+  toggleCategory(): void {
+    this.activeCategory =
+      this.activeCategory === 'frontend' ? 'backend' : 'frontend';
   }
 
   // Funktion zum Öffnen des Modals mit den Projektinformationen

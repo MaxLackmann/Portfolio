@@ -162,7 +162,62 @@ section {
   }
 }
 
+.skill-toggle-buttons {
+  display: flex;
+  margin-bottom: 24px;
 
+  button {
+    position: relative;
+    width: 160px;
+    height: 44px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease, color 0.4s ease;
+
+    &.backend-active {
+      color: #3dcfb6;
+      box-shadow: 0 0 6px rgba(61, 207, 182, 0.8);
+
+      &:hover {
+        color: white;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    &.frontend-active {
+      color: white;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+
+      &:hover {
+        color: #3dcfb6;
+        box-shadow: 0 0 6px rgba(61, 207, 182, 0.9);
+      }
+    }
+
+    .label {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease, color 0.4s ease;
+      pointer-events: none;
+      color: inherit;
+    }
+
+    .label.visible {
+      opacity: 1;
+    }
+  }
+}
 
 .skillbox {
   width: 70px;
@@ -219,19 +274,24 @@ section {
   opacity: 0; /* Unsichtbar */
   z-index: 10; /* Über anderen Elementen */
 
+  .tooltip-icons {
+    display: flex;
+    gap: 8px;
+  }
+
   img {
     animation: none;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
-    top: 100%; /* Positioniere die Spitze direkt unter dem Tooltip */
+    top: 100%;
     left: 50%;
-    margin-left: -8px; /* Mitte der Spitze */
-    border-width: 8px; /* Höhe der Spitze */
+    margin-left: -8px;
+    border-width: 8px;
     border-style: solid;
-    border-color: #3dcfb6 transparent transparent transparent; /* Farbverlauf für die Spitze */
+    border-color: #3dcfb6 transparent transparent transparent;
   }
 }
 

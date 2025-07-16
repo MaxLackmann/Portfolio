@@ -12,7 +12,6 @@ import {
   Validators,
   AbstractControl,
 } from '@angular/forms';
-import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -23,7 +22,6 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PrivacyPolicyComponent,
     RouterLink,
     TranslateModule,
   ],

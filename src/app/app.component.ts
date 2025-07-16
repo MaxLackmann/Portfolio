@@ -1,5 +1,5 @@
 import { Component, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { ScrollService } from './scroll-service.service'; // ScrollService impor
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TranslateModule, CommonModule, RouterLink, RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [TranslateModule, CommonModule, RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
